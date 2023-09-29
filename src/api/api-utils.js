@@ -7,7 +7,8 @@ export const getCountries = new Promise((resolve,reject) => {
 })
 
 
-export function getRandomCountries (countries, iterations) {
+export function getRandomCountries (iterations) {
+    const countries = getCountries
     const randomCountriesArray = []
     
     countries.then((res) => {

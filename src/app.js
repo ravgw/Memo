@@ -1,4 +1,4 @@
-import { getCountries, getRandomCountries} from './api/api-utils.js'
+import { getRandomCountryInfo }  from './components/home-random.js'
 // import { } from './components/navigation.js'
 
-console.log(getRandomCountries(getCountries,10))
+getRandomCountryInfo()
