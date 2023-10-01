@@ -6,13 +6,13 @@ export const getCountries = new Promise((resolve,reject) => {
     resolve(countries)
 })
 
-
 export function getRandomCountries (iterations) {
     const countries = getCountries
     const randomCountriesArray = []
     
     countries.then((res) => {
         const keysArray = Object.keys(res)
+
         
         while(randomCountriesArray.length < iterations) {
             const randomIndex = Math.floor(Math.random() * keysArray.length)
@@ -26,3 +26,17 @@ export function getRandomCountries (iterations) {
     })
     return randomCountriesArray;
 }
+
+export async function getRandomCountry () {
+    const countries = getCountries
+    
+    return countries.then((res) => {
+        const keysArray = Object.keys(res)
+        const randomIndex = Math.floor(Math.random() * keysArray.length)
+        const randomKey = keysArray[randomIndex]
+        const randomCountry = res[randomKey]
+        // console.log(randomCountry)
+        return randomCountry
+    });
+
+}   
