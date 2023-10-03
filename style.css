@@ -2,6 +2,7 @@
     margin: 0;
     color: red;
     background-color: rgb(250,250,250);
+    box-sizing: border-box;
 }
 
 navigation {
@@ -13,7 +14,24 @@ navigation {
 #arrow {
     text-align: center;
 }
-/* 
+
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
 .home-random_container {
-    border: ;
-} */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-top: 50px;
+}
+
+.home-random_flag {
+    width: 85%;
+    max-width: 300px;
+    height: auto;
+}

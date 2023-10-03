@@ -11,11 +11,14 @@ export function getRandomCountryInfo() {
     }) 
     
     country.then((randomCountry) => {
-      // console.log(randomCountry)
+      console.log(randomCountry)
       nameTag.innerText = randomCountry.name.common
       flag.src = randomCountry.flags.png
 
       const info = getRandomInfo(randomCountry)
+      if (validatingInfo(info)) {
+
+      }
       infoDiv.innerText = `${info.key} : ${info.value}`
     })
 }
@@ -24,5 +27,14 @@ function getRandomInfo (country) {
   const keys = Object.keys(country);
   const randomKey = keys[Math.floor(Math.random() * keys.length)];
   const randomValue = country[randomKey];
+
   return { key: randomKey, value: randomValue };
+}
+
+function validatingInfo (countryInfo) {
+  if ( countryInfo.key === 'capital') {
+    return true
+  } else {
+    return false
+  }
 }
