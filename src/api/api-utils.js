@@ -1,4 +1,4 @@
-import { fetchCountries } from './api.js'
+import { fetchCountries, fetchWeather } from './api.js'
 
 
 export const getCountries = new Promise((resolve,reject) => {
@@ -40,3 +40,19 @@ export async function getRandomCountry () {
     });
 
 }   
+
+
+
+
+export const getWeather = new Promise((resolve,reject) => {
+    const countries = fetchWeather()
+    resolve(countries)
+})
+
+export function getWarsawWeather () {
+    const weat = getWeather
+    weat.then((res) => {
+        console.log(res)
+        console.log('xd')
+    })
+}
