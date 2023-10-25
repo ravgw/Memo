@@ -1,4 +1,5 @@
 import { getRandomCountry } from '../api/api-utilities/country.js'
+import { getWeather } from '../api/api-utilities/weather.js'
 
 export function getRandomCountryInfo() {
     const flag = document.querySelector('.home-random_flag')
@@ -17,10 +18,12 @@ export function getRandomCountryInfo() {
 
       const info = getRandomInfo(randomCountry)
       if (validatingInfo(info)) {
-
       }
       infoDiv.innerText = `${info.key} : ${info.value}`
+      getWeather(randomCountry.capital)
     })
+
+
 }
 
 function getRandomInfo (country) {

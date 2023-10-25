@@ -35,7 +35,6 @@ export async function getRandomCountry () {
         const randomIndex = Math.floor(Math.random() * keysArray.length)
         const randomKey = keysArray[randomIndex]
         const randomCountry = res[randomKey]
-        // console.log(randomCountry)
         return randomCountry
     });
 
