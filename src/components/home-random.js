@@ -1,4 +1,4 @@
-import { getRandomCountry } from '../api/api-utils.js'
+import { getRandomCountry } from '../api/api-utilities/country.js'
 
 export function getRandomCountryInfo() {
     const flag = document.querySelector('.home-random_flag')
