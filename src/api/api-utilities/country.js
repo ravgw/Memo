@@ -27,7 +27,7 @@ export function getRandomCountries (iterations) {
     return randomCountriesArray;
 }
 
-export async function getRandomCountry () {
+export async function drawRandomCountry () {
     const countries = getCountries
     
     return countries.then((res) => {

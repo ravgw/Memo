@@ -1,43 +1,42 @@
-import { getRandomCountry } from '../api/api-utilities/country.js'
+import { drawRandomCountry} from '../api/api-utilities/country.js'
 import { getWeather } from '../api/api-utilities/weather.js'
 
-export function getRandomCountryInfo() {
-    const flag = document.querySelector('.home-random_flag')
-    const nameTag = document.querySelector('.home-random_nametag')
-    const infoDiv = document.querySelector('.home-random_random-info')
+export async function embedHomeRandomCountry() {
 
-    const country = new Promise((resolve) => {
-      const randomCountry = getRandomCountry()
-      resolve(randomCountry)
-    }) 
-    
-    country.then((randomCountry) => {
-      console.log(randomCountry)
-      nameTag.innerText = randomCountry.name.common
-      flag.src = randomCountry.flags.png
+    const randomCountry = await drawRandomCountry()
+    const weather = await getWeather(randomCountry.capital)
 
-      const info = getRandomInfo(randomCountry)
-      if (validatingInfo(info)) {
-      }
-      infoDiv.innerText = `${info.key} : ${info.value}`
-      getWeather(randomCountry.capital)
-    })
-
+    embedCountryInfo(randomCountry)
+    embedWeather(weather)
+    console.log(weather.location.localtime)
 
 }
 
-function getRandomInfo (country) {
-  const keys = Object.keys(country);
-  const randomKey = keys[Math.floor(Math.random() * keys.length)];
-  const randomValue = country[randomKey];
+// function getRandomInfo (country) {
+//   const keys = Object.keys(country);
+//   const randomKey = keys[Math.floor(Math.random() * keys.length)];
+//   const randomValue = country[randomKey];
 
-  return { key: randomKey, value: randomValue };
+//   return { key: randomKey, value: randomValue };
+// }
+
+
+function embedCountryInfo (country) {
+  const nameTag = document.querySelector('.home-random_nametag')
+  const capital = document.querySelector('.home-random_capital')
+  const flag = document.querySelector('.home-random_flag')
+
+  nameTag.innerText = country.name.common
+  capital.innerText = country.capital
+  flag.src = country.flags.png
 }
 
-function validatingInfo (countryInfo) {
-  if ( countryInfo.key === 'capital') {
-    return true
-  } else {
-    return false
-  }
+function embedWeather (weather) {
+  const conIcon = document.querySelector('.weather-condition_icon')
+  const conText = document.querySelector('.weather-condition_text')
+  const conTemp = document.querySelector('.weather-condition_temperature')
+
+  conTemp.innerText = weather.current.temp_c
+  conText.innerText = weather.current.condition.text
+  conIcon.src = weather.current.condition.icon
 }
