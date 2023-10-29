@@ -35,8 +35,11 @@ function embedWeather (weather) {
   const conIcon = document.querySelector('.weather-condition_icon')
   const conText = document.querySelector('.weather-condition_text')
   const conTemp = document.querySelector('.weather-condition_temperature')
+  const localTime = document.querySelector('.home-random_local-time')
 
-  conTemp.innerText = weather.current.temp_c
+
+  conTemp.innerHTML = `${weather.current.temp_c} &#176;C`
+  localTime.innerText = weather.location.localtime
   conText.innerText = weather.current.condition.text
   conIcon.src = weather.current.condition.icon
 }

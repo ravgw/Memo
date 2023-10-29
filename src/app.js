@@ -3,3 +3,7 @@ import { embedHomeRandomCountry }  from './components/home-random.js'
 // import { } from './components/navigation.js'
 
 embedHomeRandomCountry()
+
+document.querySelector('#btn-reload_country').addEventListener('click', () => {
+    embedHomeRandomCountry()
+  })

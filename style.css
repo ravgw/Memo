@@ -65,6 +65,9 @@ main {
     padding: 20px;
     font-size: 1.5rem;
     padding-bottom: 30px;
+    background-color: transparent;
+    color: white;
+    
 }
 
 .home-random_weather-container, 
@@ -86,6 +89,8 @@ main {
     height: 100%;
     color: white;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
 }
 
 .home-random_weather-condition {
@@ -93,5 +98,27 @@ main {
     border-style: solid;
     border-width: 0px 0px 3px 3px;
     border-radius: 0px 0px 45px 45px;
+    align-items: center;
+    flex-direction: column;
 }
 
+.weather-condition_icon,
+.weather-condition_text,
+.weather-condition_temperature {
+    background-color: transparent;
+    color: red;
+}
+
+.weather-condition_icon {
+    height: 65%;
+    max-height: 80px;
+}
+
+.reload {
+    border: none;
+    background-color: transparent;
+}
+
+.reload img {
+    background-color: transparent;
+}
