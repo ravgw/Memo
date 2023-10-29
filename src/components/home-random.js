@@ -43,3 +43,4 @@ function embedWeather (weather) {
   conText.innerText = weather.current.condition.text
   conIcon.src = weather.current.condition.icon
 }
+

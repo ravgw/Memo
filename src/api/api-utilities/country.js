@@ -1,42 +1,35 @@
 import { fetchCountries } from '../api.js'
 
 
-export const getCountries = new Promise((resolve,reject) => {
-    const countries = fetchCountries()
-    resolve(countries)
-})
-
-export function getRandomCountries (iterations) {
-    const countries = getCountries
-    const randomCountriesArray = []
+// export async function getRandomCountries (iterations) {
+//     const countries = await fetchCountries()
+//     const randomCountriesArray = []
     
-    countries.then((res) => {
-        const keysArray = Object.keys(res)
+//     countries.then((country) => {
+//         const keysArray = Object.keys(country)
 
-        
-        while(randomCountriesArray.length < iterations) {
-            const randomIndex = Math.floor(Math.random() * keysArray.length)
-            const randomKey = keysArray[randomIndex]
-            const randomCountry = res[randomKey]
+//         while(randomCountriesArray.length < iterations) {
+//             const randomIndex = Math.floor(Math.random() * keysArray.length)
+//             const randomKey = keysArray[randomIndex]
+//             const randomCountry = country[randomKey]
             
-            if(!randomCountriesArray.includes(randomCountry)) {
-                randomCountriesArray.push(randomCountry)
-            }
-        }
-    })
-    return randomCountriesArray;
-}
+//             if(!randomCountriesArray.includes(randomCountry)) {
+//                 randomCountriesArray.push(randomCountry)
+//             }
+//         }
+//     })
+//     return randomCountriesArray;
+// }
 
 export async function drawRandomCountry () {
-    const countries = getCountries
-    
-    return countries.then((res) => {
-        const keysArray = Object.keys(res)
+    const countries = await fetchCountries()
+
+        const keysArray = Object.keys(countries)
         const randomIndex = Math.floor(Math.random() * keysArray.length)
         const randomKey = keysArray[randomIndex]
-        const randomCountry = res[randomKey]
-        return randomCountry
-    });
+        const randomCountry = countries[randomKey]
+        const country = randomCountry
 
+    return country
 }   
 
