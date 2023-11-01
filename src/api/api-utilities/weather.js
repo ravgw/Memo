@@ -5,3 +5,4 @@ export async function getWeather(location) {
     console.log(weather)
     return weather
 }
+

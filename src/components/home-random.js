@@ -7,9 +7,7 @@ export async function embedHomeRandomCountry() {
     const weather = await getWeather(randomCountry.capital)
 
     embedCountryInfo(randomCountry)
-    embedWeather(weather)
-    console.log(weather.location.localtime)
-
+    embedWeatherInfo(weather)
 }
 
 // function getRandomInfo (country) {
@@ -31,7 +29,7 @@ function embedCountryInfo (country) {
   flag.src = country.flags.png
 }
 
-function embedWeather (weather) {
+function embedWeatherInfo (weather) {
   const conIcon = document.querySelector('.weather-condition_icon')
   const conText = document.querySelector('.weather-condition_text')
   const conTemp = document.querySelector('.weather-condition_temperature')
