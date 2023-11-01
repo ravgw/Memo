@@ -171,22 +171,28 @@ main {
     max-height: 80px;
 }
 
-.showButtons {
-    display: none;
+.show-button_section {
+    display: flex;
+    height: 0%;
     background-color: red;
     width: 100%;
-    animation: showSection forwards 1s ease;
 }
 
 @keyframes hideSectionNameTag {
-    /* 0% { height: 0%;} */
-    100% {height: 0%;
-          display: hide;
-          content-visibility: hidden;}
+    100% {
+        height: 0%;
+        display: hide;
+        }
 }
 @keyframes hideSectionReload {
-    /* 0% { height: 0%;} */
-    100% {height: 6%;
-          display: hide;
-          content-visibility: hidden;}
+    100% {
+        height: 0%;
+        display: hide;
+    }
+}
+
+@keyframes showButtonsSection {
+    100% { 
+        height: 10%;
+    }
 }

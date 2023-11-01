@@ -12,4 +12,8 @@ export function hideReload () {
 
     nameTagSection.style.animation = 'hideSectionNameTag forwards 0.5s ease'
     nameTag.style.display = 'none'
+
+    const showButtons = document.querySelector('.show-button_section')
+    // showButtons.style.display = 'flex'
+    showButtons.style.animation = 'showButtonsSection forwards 0.5s 1s ease'
 }
