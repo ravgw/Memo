@@ -1,5 +1,5 @@
 import { embedHomeRandomCountry }  from './components/home-random.js'
-import { hideReload, showReload } from './components/more-info.js'
+import { hideAction, showAction } from './components/home-action-buttons.js'
 
 embedHomeRandomCountry()
 
@@ -9,9 +9,9 @@ document.querySelector('#btn-reload_country').addEventListener('click', () => {
 
 
 document.querySelector('#btn-more_info').addEventListener('click', () => {
-  hideReload()
+  hideAction()
 })
 
-document.querySelector('.show-button_section img').addEventListener('click', () => {
-  showReload()
+document.querySelector('.back-button_section img').addEventListener('click', () => {
+  showAction()
 })

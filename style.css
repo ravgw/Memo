@@ -67,6 +67,7 @@ main {
 
 .home-random_capital-info {
     text-align: center;
+    overflow: hidden;
 }
 
 .home-random_capital {
@@ -83,6 +84,7 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
 }
 
 .weather-condition {
@@ -113,7 +115,7 @@ main {
 }
 
 .home-random_section-nametag, 
-.home-random_section-reload{
+.home-random_section-action{
     width: 100%;
     height: 20%;
     display: flex;
@@ -123,7 +125,7 @@ main {
     overflow: hidden;
     content-visibility: visible;
 }
-.home-random_section-reload{
+.home-random_section-action{
     align-items: flex-start;
 }
 
@@ -144,7 +146,7 @@ main {
     align-items: center;
     flex-direction: column;
 }
-.home-random_reload {
+.home-random_action {
     height: 100%;
     width: 95%;
     background-color: transparent;
@@ -173,7 +175,7 @@ main {
     max-height: 80px;
 }
 
-.show-button_section {
+.back-button_section {
     position: relative;
     display: flex;
     align-items: center;
@@ -184,7 +186,7 @@ main {
     overflow: hidden;
     animation-delay: 1s;
 }
-.show-button_section img {
+.back-button_section img {
     position: absolute;
     display: inherit;
     top: 5%;
