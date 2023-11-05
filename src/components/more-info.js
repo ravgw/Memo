@@ -1,37 +1,40 @@
 export function hideReload () {
     const section = document.querySelector('.home-random_section-reload')
-    const buttons = document.querySelectorAll('.reload')
-
-    section.classList.add('animationHide')
-    buttons.forEach((button) => {
-        // button.style.display = 'none'
-    })
-
     const nameTagSection = document.querySelector('.home-random_section-nametag')
-    const nameTag = document.querySelector('.home-random_nametag')
-    
-    nameTagSection.classList.add('animationHide')
-    // nameTag.style.display = 'none'
 
-    const showButtons = document.querySelector('.show-button_section')
-    showButtons.style.animation = 'showButtonsSection forwards 0.5s 1s ease'
+    hideReloadElement(section)
+    hideReloadElement(nameTagSection)
+
+    showBackToReloadButton()
 }
 
 export function showReload () {
-    const section = document.querySelector('.home-random_section-reload')
-    const buttons = document.querySelectorAll('.reload')
+    const sections = document.querySelectorAll('.animationHide')
+    showReloadElements(sections)
+    hideBackToReloadButton()
+}
 
-    section.style.animation = 'showSection forwards 1s ease'
-    buttons.forEach((button) => {
-        button.style.display = 'block'
-    })
-
-    const nameTagSection = document.querySelector('.home-random_section-nametag')
-    const nameTag = document.querySelector('.home-random_nametag')
-
-    nameTagSection.style.animation = 'showSection forwards 0.5s ease'
-    nameTag.style.display = 'flex'
-
+function showBackToReloadButton () {
     const showButtons = document.querySelector('.show-button_section')
-    showButtons.style.animation = 'hideSection 0.5s 1s ease'
+    showButtons.classList.remove('hideBackToReloadButton')
+    showButtons.classList.add('showBackToReloadButton')
+}
+
+function hideBackToReloadButton () {
+    const hideButtons = document.querySelector('.showBackToReloadButton')
+    hideButtons.classList.remove('showBackToReloadButton')
+    hideButtons.classList.add('hideBackToReloadButton')
+}
+
+
+function showReloadElements (elements) {
+    elements.forEach((element) => {
+        element.classList.remove('animationHide')
+        element.classList.add('animationShow')
+    })
+}
+
+function hideReloadElement (element) {
+    element.classList.remove('animationShow')
+    element.classList.add('animationHide')
 }
