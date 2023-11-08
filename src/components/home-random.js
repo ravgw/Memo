@@ -10,13 +10,6 @@ export async function embedHomeRandomCountry() {
     embedWeatherInfo(weather)
 }
 
-// function getRandomInfo (country) {
-//   const keys = Object.keys(country);
-//   const randomKey = keys[Math.floor(Math.random() * keys.length)];
-//   const randomValue = country[randomKey];
-
-//   return { key: randomKey, value: randomValue };
-// }
 
 
 function embedCountryInfo (country) {
