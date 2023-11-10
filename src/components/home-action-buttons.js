@@ -4,21 +4,21 @@ import { embedCountryInfo } from '../home/country-info.js'
 
 
 export function hideAction () {
-    hideElement(homeElements.actionSection)
-    hideElement(homeElements.nameTagSection)
-    hideElement(homeElements.capitalNameTagAndDate)
-    hideElement(homeElements.capitalWeather)
-    showElement(homeElements.backButton)
+    homeElements.nameTagSection.hide()
+    homeElements.actionSection.hide()
+    homeElements.capitalNameTagAndDate.hide()
+    homeElements.capitalWeather.hide()
+    homeElements.backButton.show()
     embedCountryInfo()
     // showBackToReloadButton()
 }
 
 export function showAction () {
-    showElement(homeElements.actionSection)
-    showElement(homeElements.nameTagSection)
-    showElement(homeElements.capitalNameTagAndDate)
-    showElement(homeElements.capitalWeather)
-    hideElement(homeElements.backButton)
+    homeElements.actionSection.show()
+    homeElements.nameTagSection.show()
+    homeElements.capitalNameTagAndDate.show()
+    homeElements.capitalWeather.show()
+    homeElements.backButton.hide()
     // hideBackToReloadButton()
 }
 

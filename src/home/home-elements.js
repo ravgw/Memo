@@ -1,32 +1,49 @@
-const nameTagSection = {
-    element: document.querySelector('.home-random_section-nametag'),
-    show: 'animationShow',
-    hide: 'animationHide',
+class homeElement {
+    constructor (element,showClass,hideClass){
+        this.element = element,
+        this.showClass = showClass,
+        this.hideClass = hideClass
+    }
+    hide() {
+        this.element.classList.remove(this.showClass)
+        this.element.classList.add(this.hideClass)
+    }
+    show() {
+        this.element.classList.add(this.showClass)
+         this.element.classList.remove(this.hideClass)
+    }
 }
 
-const actionSection = {
-    element: document.querySelector('.home-random_section-action'),
-    show: 'animationShow',
-    hide: 'animationHide',
-}
+const nameTagSection = new homeElement(
+    document.querySelector('.home-random_section-nametag'),
+    'animationShow',
+    'animationHide'
+)
 
-const backButton = {
-    element: document.querySelector('.back-button_section'),
-    show: 'showBackToReloadButton',
-    hide: 'hideBackToReloadButton',
-}
+const actionSection = new homeElement (
+    document.querySelector('.home-random_section-action'),
+    'animationShow',
+    'animationHide',
+)
 
-const capitalNameTagAndDate = {
-    element: document.querySelector('.home-random_capital-info'),
-    show: 'animationShowByScale',
-    hide: 'animationHideByScale',
-}
+const backButton = new homeElement(
+    document.querySelector('.back-button_section'),
+    'showBackToReloadButton',
+    'hideBackToReloadButton',
+)
 
-const capitalWeather = {
-    element: document.querySelector('.weather-condition_container'),
-    show: 'animationShowByScale',
-    hide: 'animationHideByScale',
-}
+const capitalNameTagAndDate = new homeElement(
+    document.querySelector('.home-random_capital-info'),
+    'animationShowByScale',
+    'animationHideByScale',
+)
+
+const capitalWeather = new homeElement(
+    document.querySelector('.weather-condition_container'),
+    'animationShowByScale',
+    'animationHideByScale',
+)
+
 
 export const homeElements = {
     nameTagSection: nameTagSection,
@@ -35,3 +52,4 @@ export const homeElements = {
     capitalNameTagAndDate: capitalNameTagAndDate,
     capitalWeather: capitalWeather,
 }
+
