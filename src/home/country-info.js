@@ -28,16 +28,22 @@ function embedInfo (nametag, value) {
     return infoContainer
 } 
 
-function checkInfo (c) {
-    console.log(c.capital)
-    console.log(c.car.side)
-    console.log(Object.values(c.currencies)
-    .map((currency) => currency.name)
-    .join(", "))
-    console.log(c.languages)
-    console.log(c.name.common)
-    console.log(c.name.official)
-    console.log(c.population)
-    console.log(c.region)
-    console.log(c.timezones[0])
+function countryInfo (country) {
+    const infoArray =[
+        ['Capital', country.capital],
+        ['Car side', country.car.side],
+        ['Currency', Object.values(country.currencies
+        .map((currency) => {
+        const curr = `${currency.name} : ${currency.symbol}`
+        return curr
+        }).join(", "))],
+        ['Lalnguages',country.languages],
+        ['Name common', country.name.common],
+        ['Name official', country.name.official],
+        ['Population', country.population],
+        ['Region', country.region],
+        ['Timezones', country.timezones]
+    ]
+
+    
 }
