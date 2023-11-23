@@ -14,42 +14,32 @@ class homeElement {
     }
 }
 
-const nameTagSection = new homeElement(
-    document.querySelector('.home-random_section-nametag'),
-    'animationShow',
-    'animationHide'
-)
-
-const actionSection = new homeElement (
-    document.querySelector('.home-random_section-action'),
-    'animationShow',
-    'animationHide',
-)
-
-const backButton = new homeElement(
-    document.querySelector('.back-button_section'),
-    'showBackToReloadButton',
-    'hideBackToReloadButton',
-)
-
-const capitalNameTagAndDate = new homeElement(
-    document.querySelector('.home-random_capital-info'),
-    'animationShowByScale',
-    'animationHideByScale',
-)
-
-const capitalWeather = new homeElement(
-    document.querySelector('.weather-condition_container'),
-    'animationShowByScale',
-    'animationHideByScale',
-)
-
 
 export const homeElements = {
-    nameTagSection: nameTagSection,
-    actionSection: actionSection,
-    backButton: backButton,
-    capitalNameTagAndDate: capitalNameTagAndDate,
-    capitalWeather: capitalWeather,
+    nameTagSection: new homeElement(
+        document.querySelector('.home-random_section-nametag'),
+        'animationShow',
+        'animationHide'
+    ),
+    actionSection: new homeElement (
+        document.querySelector('.home-random_section-action'),
+        'animationShow',
+        'animationHide',
+    ),
+    backButton: new homeElement(
+        document.querySelector('.back-button_section'),
+        'showBackToReloadButton',
+        'hideBackToReloadButton',
+    ),
+    capitalNameTagAndDate: new homeElement(
+        document.querySelector('.home-random_capital-info'),
+        'animationShowByScale',
+        'animationHideByScale',
+    ),
+    capitalWeather: new homeElement(
+        document.querySelector('.weather-condition_container'),
+        'animationShowByScale',
+        'animationHideByScale',
+    ),
 }
 

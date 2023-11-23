@@ -1,14 +1,12 @@
 import { currentRandomCounrty } from "../api/api-utilities/country.js"
 
-const infoSection = document.querySelector('.home-random_section-info')
 
 export async function embedCountryInfo  () {
-    const randomCountry = currentRandomCounrty
-    createBoard(randomCountry)
-    
+    createBoard(currentRandomCounrty)
 }
 
 function createBoard (randomCounrty) {
+    const infoSection = document.querySelector('.home-random_section-info')
     const board = document.createElement('div')
     board.classList.add('countryInfoBoard')
     infoSection.appendChild(board)

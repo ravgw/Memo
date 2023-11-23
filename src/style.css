@@ -10,10 +10,11 @@
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 5% 1fr 5%;
+    grid-template-rows: 5% 90% 5%;
     justify-items: center;
     align-items: center;
-    height: 100vh;
+    height: 100svh;
+    max-height: 100svh;
 }
 
 navigation {
@@ -37,8 +38,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-
+    justify-content: flex-start;
+    overflow-y: scroll;
 }
 
 .home-random_section-info {
@@ -47,12 +48,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 5%;
+    justify-content: flex-start;
+    padding-top: 5%;
     border-color: red;
     border-style: solid;
     border-width: 0px 0px 0px 3px;
     border-radius: 45px 0px 0px 0px;
+    overflow: scroll;
 }
 
 .home-random_flag {
@@ -63,7 +65,6 @@ main {
 
 .home-random_capital-info {
     text-align: center;
-    overflow: hidden;
 }
 
 .home-random_capital {
@@ -80,7 +81,6 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    overflow: hidden;
 }
 
 .weather-condition {
@@ -192,6 +192,7 @@ main {
 .countryInfoBoard {
     height: 100%;
     width: 100%;
+    overflow: scroll;
 }
 
 /* 
