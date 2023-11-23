@@ -13,9 +13,8 @@ function createBoard (randomCounrty) {
     board.classList.add('countryInfoBoard')
     infoSection.appendChild(board)
 
-    const infoArray = countryInfo(randomCounrty)
+    const infoArray = selectInformations(randomCounrty)
     for (const element of infoArray) {
-        element.setValues()
         const info = embedInfo(element.tag, element.value)
         board.appendChild(info)
     }
@@ -35,81 +34,35 @@ function embedInfo (nametag, value) {
     return infoContainer
 } 
 
-function countryInfo (country) {
-    console.log(country)
-    class informations {
-        constructor (tag,data,multipleTag) {
-            this.tag = tag;
-            this.multipleTag = multipleTag;
-            this.data = data;
-            this.value;
+function selectInformations(country) {
+
+    class info {
+        constructor (tag,value,multipleTag) {
+            this.tag = tag
+            this.multipleTag = multipleTag
+            this.value = value
+            this.checkMultiple()
         }
 
-        setValues () {
-            let values = this.data
-            if (typeof(this.data) != 'string' && typeof(this.data[0]) != 'string') {
-                values = Object.values(this.data).map((element) => `${element.name} ${element.symbol}`)
-            } else if (typeof(this.data) != 'string') {
-                values = Object.values(this.data).join(", ")
+        checkMultiple() {
+            if ( this.value instanceof Array && this.value.length > 1) {
+                this.tag = this.multipleTag
             }
-            // console.log(values)
-            this.value = values
         }
     }
 
-    const infoArray =[
-        new informations('Capital: ', country.capital),
-        new informations('Car side: ',country.car.side),
-        new informations('Currency: ', country.currencies),
-        new informations('Language: ', country.languages,'Languages: '),
-        new informations('Name common: ', country.name.common),
-        new informations('Name official: ', country.name.official),
-        new informations('Population: ', country.population.toLocaleString()),
-        new informations('Region: ', country.region),
-        new informations('Timezones: ', country.timezones),
+    const informations =
+    [
+        new info('Capital: ', country.capital),
+        new info('Car side: ',country.car.side),
+        new info('Currency: ', Object.values(country.currencies).map((currency) => `${currency.symbol} ${currency.name}`),'Currencies: '),
+        new info('Language: ', Object.values(country.languages),'Languages: '),
+        new info('Name common: ', country.name.common),
+        new info('Name official: ', country.name.official),
+        new info('Population: ', country.population.toLocaleString()),
+        new info('Region: ', country.region),
+        new info('Timezone: ', country.timezones, 'Timezones: '),
     ]   
-    return infoArray
+
+    return informations
 }
-
-
-// {
-//     tag: 'Capital: ',
-//     value: country.capital,
-// },
-// {
-//     tag: 'Car side: ',
-//     value: country.car.side,
-// },
-// {
-//     tag: 'Currency: ', 
-//     value: Object.values(country.currencies)
-//     .map((currency) => currency.name)
-//     .join(", "),
-// },
-// {
-//     tag: 'Lalnguage: ',
-//     multipleTag: 'Languages: ',
-//     value: function setValues() {
-//         Object.values(country.languages).join(", ")
-//     },
-// },
-// {
-//     tag: 'Name common: ',
-//     value: country.name.common,
-// },
-// {
-//     tag: 'Name official: ',
-//     value: country.name.official,
-// },
-// {
-//     tag:'Population: ', 
-//     value: country.population.toLocaleString(),
-// },
-// {
-//     tag: 'Region: ', 
-//     value: country.region,
-// },
-// {
-//     tag: 'Timezones: ', 
-//     value: country.timezones,
-// }
