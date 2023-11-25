@@ -9,6 +9,7 @@ function createBoard (randomCounrty) {
     const infoSection = document.querySelector('.home-random_section-info')
     const board = document.createElement('div')
     board.classList.add('countryInfoBoard')
+    board.classList.add('animationShowByScale')
     infoSection.appendChild(board)
 
     const infoArray = selectInformations(randomCounrty)
@@ -19,9 +20,12 @@ function createBoard (randomCounrty) {
 }
 
 function embedInfo (nametag, value) {
+
     const infoContainer = document.createElement('div')
     const infoTag = document.createElement('p')
+    infoTag.classList.add('info-tag')
     const infoValue = document.createElement('p')
+    infoValue.classList.add('info-value')
 
     infoTag.innerText = nametag
     infoValue.innerText = value

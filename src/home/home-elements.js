@@ -41,5 +41,15 @@ export const homeElements = {
         'animationShowByScale',
         'animationHideByScale',
     ),
+    mainInfo: new homeElement(
+        document.querySelector('.home-random_main-info'),
+        'animationShowByScale',
+        'animationHideByScale',
+    ),
+    infoBoard: new homeElement(
+        document.querySelector('.countryInfoBoard'),
+        'animationShowByScale',
+        'animationHideByScale',
+    )
 }
 

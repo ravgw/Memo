@@ -39,7 +39,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .home-random_section-info {
@@ -63,6 +63,14 @@ main {
     padding-top: 30px;
 }
 
+.home-random_main-info {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 .home-random_capital-info {
     text-align: center;
 }
@@ -191,10 +199,33 @@ main {
 
 .countryInfoBoard {
     height: 100%;
-    width: 100%;
-    overflow: scroll;
+    width: 90%;
+    overflow-y: scroll;
 }
 
+/* 
+______________________________________________ 
+H
+O
+M
+E
+
+C
+
+I
+N
+F
+O
+ ______________________________________________ 
+ */
+ .info-tag {
+    font-size: 1.1rem;
+ }
+
+ .info-value {
+    color: black;
+    text-align: end;
+ }
 /* 
 ______________________________________________ 
 A
@@ -267,12 +298,14 @@ N
 @keyframes hideByScale {
     100% {
         transform: scale(0);
+        display: none;
     }
 }
 
 @keyframes showByScale {
     0% {
         transform: scale(0);
+        display: flex;
     }
     100% {
         transform: scale(1);

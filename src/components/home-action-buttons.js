@@ -7,12 +7,18 @@ export function hideAction () {
     homeElements.actionSection.hide()
     homeElements.capitalNameTagAndDate.hide()
     homeElements.capitalWeather.hide()
-    console.log('before')
+    homeElements.mainInfo.hide()
+    
+    let infoBoard = false
     document.querySelector('.back-button_section').addEventListener('animationend',() => {
-        console.log('inside')
-        embedCountryInfo()
-        console.log('after')
+        if(infoBoard) {
+            homeElements.infoBoard.show()
+        } else {
+            embedCountryInfo()
+            infoBoard = true
+        }
     })
+    
     homeElements.backButton.show()
 }
 
@@ -21,6 +27,9 @@ export function showAction () {
     homeElements.nameTagSection.show()
     homeElements.capitalNameTagAndDate.show()
     homeElements.capitalWeather.show()
+    homeElements.mainInfo.show()
+
+    homeElements.infoBoard.hide()
     homeElements.backButton.hide()
 }
 
