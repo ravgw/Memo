@@ -1,37 +1,36 @@
 import { homeElements } from '../home/home-elements.js'
 import { embedCountryInfo } from '../home/country-info.js'
 
-
-export function hideAction () {
-    homeElements.nameTagSection.hide()
-    homeElements.actionSection.hide()
-    homeElements.capitalNameTagAndDate.hide()
-    homeElements.capitalWeather.hide()
-    homeElements.mainInfo.hide()
-    
-    let infoBoard = false
-    document.querySelector('.back-button_section').addEventListener('animationend',() => {
-        if(infoBoard) {
-            homeElements.infoBoard.show()
-        } else {
-            embedCountryInfo()
-            infoBoard = true
-        }
-    })
-    
-    homeElements.backButton.show()
+export const actionBar = {
+    elements: homeElements,
+    detailInfoStatus: false,
+    hide() {
+        this.elements.nameTagSection.hide()
+        this.elements.actionSection.hide()
+        this.elements.capitalNameTagAndDate.hide()
+        this.elements.capitalWeather.hide()
+        this.elements.mainInfo.hide()   
+        this.elements.backButton.show()
+    },
+    show() {
+        this.elements.actionSection.show()
+        this.elements.nameTagSection.show()
+        this.elements.capitalNameTagAndDate.show()
+        this.elements.capitalWeather.show()
+        this.elements.mainInfo.show()
+        this.elements.infoBoard.hide()
+        this.elements.backButton.hide()
+    },
 }
 
-export function showAction () {
-    homeElements.actionSection.show()
-    homeElements.nameTagSection.show()
-    homeElements.capitalNameTagAndDate.show()
-    homeElements.capitalWeather.show()
-    homeElements.mainInfo.show()
-
-    homeElements.infoBoard.hide()
-    homeElements.backButton.hide()
+export function createDetailInfoBoard () {
+    embedCountryInfo()
+    homeElements.addElement('infoBoard', document.querySelector('.countryInfoBoard'),
+    'animationShowByScale',
+    'animationHideByScale',
+    )
+    
+    createDetailInfoBoard = () => {
+        homeElements.infoBoard?.show()
+    }
 }
-
-
-

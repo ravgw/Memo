@@ -46,10 +46,9 @@ export const homeElements = {
         'animationShowByScale',
         'animationHideByScale',
     ),
-    infoBoard: new homeElement(
-        document.querySelector('.countryInfoBoard'),
-        'animationShowByScale',
-        'animationHideByScale',
-    )
+    addElement(name, element, showClass, hideClass) {
+        this[name] = new homeElement(element, showClass, hideClass);
+        console.log(this);
+    }
 }
 
