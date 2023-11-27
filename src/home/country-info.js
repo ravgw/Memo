@@ -9,7 +9,7 @@ function createBoard (randomCounrty) {
     const infoSection = document.querySelector('.home-random_section-info')
     const board = document.createElement('div')
     board.classList.add('countryInfoBoard')
-    board.classList.add('animationShowByScale')
+    board.classList.add('animationSlideUp')
     infoSection.appendChild(board)
 
     const infoArray = selectInformations(randomCounrty)

@@ -13,24 +13,35 @@ export const actionBar = {
         this.elements.backButton.show()
     },
     show() {
+        this.elements.infoBoard.hide()
         this.elements.actionSection.show()
         this.elements.nameTagSection.show()
         this.elements.capitalNameTagAndDate.show()
         this.elements.capitalWeather.show()
         this.elements.mainInfo.show()
-        this.elements.infoBoard.hide()
         this.elements.backButton.hide()
     },
 }
 
 export function createDetailInfoBoard () {
     embedCountryInfo()
-    homeElements.addElement('infoBoard', document.querySelector('.countryInfoBoard'),
-    'animationShowByScale',
-    'animationHideByScale',
+
+    const board = document.querySelector('.countryInfoBoard')
+
+    homeElements.addElement('infoBoard', board,
+    'animationSlideUp',
+    'animationSlideDown',
     )
+
+    board.addEventListener('animationend', () => {
+        document.querySelector('.back-button_section img').addEventListener('click', () => {
+            actionBar.show()
+          })
+    })
     
-    createDetailInfoBoard = () => {
-        homeElements.infoBoard?.show()
-    }
+    createDetailInfoBoard = showDetailInfoBoard
+}
+
+function showDetailInfoBoard () {
+    homeElements.infoBoard?.show()
 }
