@@ -48,7 +48,6 @@ export const homeElements = {
     ),
     addElement(name, element, showClass, hideClass) {
         this[name] = new homeElement(element, showClass, hideClass);
-        console.log(this);
     }
 }
 

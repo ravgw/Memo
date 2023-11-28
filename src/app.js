@@ -1,24 +1,38 @@
 import { embedHomeRandomCountry }  from './components/home-random.js'
-import { actionBar, createDetailInfoBoard} from './components/home-action-buttons.js'
+import { homeElements } from './home/home-elements.js'
 
 embedHomeRandomCountry()
+addButtonsListeners()
 
-document.querySelector('#btn-reload_country').addEventListener('click', () => {
+function addButtonsListeners () {
+
+  document.querySelector('#btn-more_info').addEventListener('click', () => {
+    currentDisplay.actionBar.hide()
+  })
+  
+  document.querySelector('#btn-reload_country').addEventListener('click', () => {
     embedHomeRandomCountry()
   })
+  
+  document.querySelector('.back-button_section').addEventListener('click', () => {
+    currentDisplay.actionBar.show()
+  })
+}
 
+const currentDisplay = {
+  elements: homeElements,
+  actionBar: {
+    show() {
+      currentDisplay.elements.backButton.hide()
+      currentDisplay.elements.nameTagSection.show()
+      currentDisplay.elements.actionSection.show()
 
-document.querySelector('#btn-more_info').addEventListener('click', () => {
-  actionBar.hide()
-})
-document.querySelector('.back-button_section').addEventListener('animationend', () => {
-  if(!actionBar.detailInfoStatus){
-    createDetailInfoBoard()
+    },
+    hide() {
+      currentDisplay.elements.nameTagSection.hide()
+      currentDisplay.elements.actionSection.hide()
+      currentDisplay.elements.backButton.show()
+
+    }
   }
-  actionBar.detailInfoStatus = !actionBar.detailInfoStatus
-  console.log(actionBar.detailInfoStatus)
-})
-
-document.querySelector('.back-button_section img').addEventListener('click', () => {
-  actionBar.show()
-})
+}
