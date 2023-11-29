@@ -33,18 +33,18 @@ export const homeElements = {
     ),
     capitalNameTagAndDate: new homeElement(
         document.querySelector('.home-random_capital-info'),
-        'animationShowByScale',
-        'animationHideByScale',
+        'animationSlideUp',
+        'animationSlideDown',
     ),
     capitalWeather: new homeElement(
         document.querySelector('.weather-condition_container'),
-        'animationShowByScale',
-        'animationHideByScale',
+        'animationSlideUp',
+        'animationSlideDown',
     ),
     mainInfo: new homeElement(
         document.querySelector('.home-random_main-info'),
-        'animationShowByScale',
-        'animationHideByScale',
+        'animationSlideUp',
+        'animationSlideDown',
     ),
     addElement(name, element, showClass, hideClass) {
         this[name] = new homeElement(element, showClass, hideClass);

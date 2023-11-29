@@ -1,24 +1,25 @@
 import { homeElements } from '../home/home-elements.js'
+import { embedHomeRandomCountry } from './home-random.js'
 import { embedCountryInfo } from '../home/country-info.js'
 
 
 export function createDetailInfoBoard () {
-    embedCountryInfo()
+  embedCountryInfo()
+  
+  const board = document.querySelector('.countryInfoBoard')
+  
+  homeElements.addElement('infoBoard', board,
+  'animationSlideUp',
+  'animationSlideDown',
+  )
+  
+  board.addEventListener('animationend', (e) => {
+    if(e.target.classList.contains('animationSlideDown')){
+      currentDisplay.showStartInfoBoard()
+    }
+  })
+  
 
-    const board = document.querySelector('.countryInfoBoard')
-
-    homeElements.addElement('infoBoard', board,
-    'animationSlideUp',
-    'animationSlideDown',
-    )
-
-    board.addEventListener('animationend', () => {
-        if(actionBar.detailInfoStatus){
-            actionBar.show()
-            console.log(actionBar.detailInfoStatus)
-        } 
-    })
-    
     createDetailInfoBoard = showDetailInfoBoard
 }
 
@@ -35,15 +36,19 @@ export function addButtonsListeners () {
     
     document.querySelector('#btn-reload_country').addEventListener('click', () => {
       embedHomeRandomCountry()
+      document.querySelector('.home-random_flag').classList.remove('animationShowByScale')
+      void document.querySelector('.home-random_flag').offsetWidth
+      document.querySelector('.home-random_flag').classList.add('animationShowByScale')
     })
     
     document.querySelector('.back-button_section').addEventListener('click', () => {
       currentDisplay.actionBar.show()
+      currentDisplay.elements.infoBoard.hide()
     })
   }
   
   document.querySelector('.home-random_main-info').addEventListener('animationend', (e) => {
-    if(e.target.classList.contains('animationHideByScale')){
+    if(e.target.classList.contains('animationSlideDown')){
       currentDisplay.showDetailInfoBoard()
     }
   })
@@ -66,6 +71,9 @@ export const currentDisplay = {
     },
     showDetailInfoBoard() {
       createDetailInfoBoard()
+    },
+    showStartInfoBoard() {
+      currentDisplay.elements.mainInfo.show()
     }
   }
   

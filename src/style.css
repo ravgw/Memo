@@ -197,6 +197,8 @@ main {
 }
 
 .countryInfoBoard {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 90%;
     overflow-y: scroll;
@@ -272,7 +274,7 @@ N
 }
 
 .animationSlideDown {
-    animation: slideDown forwards 1.5s ease;
+    animation: slideDown forwards 0.5s ease;
 }
 @keyframes hideSection {
     100% {
@@ -320,7 +322,7 @@ N
 
 @keyframes slideUp {
     0% {
-        display: block;
+        display: flex;
         transform: translateY(100%);
     }
     100% {
