@@ -19,11 +19,11 @@ export function createDetailInfoBoard () {
     }
   })
   
-
     createDetailInfoBoard = showDetailInfoBoard
 }
 
 function showDetailInfoBoard () {
+    embedCountryInfo()
     homeElements.infoBoard?.show()
 }
 
@@ -34,26 +34,42 @@ export function addButtonsListeners () {
       currentDisplay.elements.mainInfo.hide()
     })
     
+    
     document.querySelector('#btn-reload_country').addEventListener('click', () => {
-      embedHomeRandomCountry()
-      document.querySelector('.home-random_flag').classList.remove('animationShowByScale')
-      void document.querySelector('.home-random_flag').offsetWidth
-      document.querySelector('.home-random_flag').classList.add('animationShowByScale')
+      reloadCountry()
     })
     
-    document.querySelector('.back-button_section').addEventListener('click', () => {
-      currentDisplay.actionBar.show()
-      currentDisplay.elements.infoBoard.hide()
-    })
-  }
-  
-  document.querySelector('.home-random_main-info').addEventListener('animationend', (e) => {
-    if(e.target.classList.contains('animationSlideDown')){
-      currentDisplay.showDetailInfoBoard()
-    }
+  document.querySelector('.back-button_section').addEventListener('click', () => {
+    currentDisplay.actionBar.show()
+    currentDisplay.elements.infoBoard.hide()
   })
+}
+  
+document.querySelector('.home-random_main-info').addEventListener('animationend', (e) => {
+  if(e.target.classList.contains('animationSlideDown')){
+    currentDisplay.showDetailInfoBoard()
+  }
+})
    
+function reloadCountry () {
+  const reloadElemnts = document.querySelectorAll('.reload-element')
 
+  document.querySelector('.reload-element').addEventListener('animationend', () => {
+    embedHomeRandomCountry()
+  }, {once:true})
+
+  reloadElemnts.forEach((e) => {
+    e.classList.add('animationHideByScale')
+  })
+
+}
+
+function tester (cos) {
+  cos.forEach((e) => {
+    e.classList.remove('animationHideByScale')
+    e.classList.add('animationShowByScale')
+  })
+}
 export const currentDisplay = {
     elements: homeElements,
     actionBar: {
@@ -77,3 +93,4 @@ export const currentDisplay = {
     }
   }
   
+
