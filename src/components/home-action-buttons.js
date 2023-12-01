@@ -1,37 +1,47 @@
 import { homeElements, reloadCountryElements } from '../home/home-elements.js'
 import { loadNewCountry } from './home-random.js'
-import { embedCountryInfo } from '../home/country-info.js'
+import { createDetailInfoNewBoard } from '../home/country-info.js'
 
 
-export function createDetailInfoBoard () {
-  embedCountryInfo()
+function createDetailInfo() {
+
+  createDetailInfoNewBoard()
   
-  const board = document.querySelector('.countryInfoBoard')
-  
-  homeElements.addElement('infoBoard', board,
-  'animationSlideUp',
-  'animationSlideDown',
-  )
+  const board = homeElements.infoBoard.element
   
   board.addEventListener('animationend', (e) => {
-    if(e.target.classList.contains('animationSlideDown')){
+    const classes = e.target.classList
+    if (classes.contains('animationSlideDown'))
+    {
       currentDisplay.showStartInfoBoard()
     }
   })
-  
-    createDetailInfoBoard = showDetailInfoBoard
+
 }
 
-function showDetailInfoBoard () {
-    embedCountryInfo()
-    homeElements.infoBoard?.show()
+function clearDetailInfo() {
+  if (document.querySelector('.countryInfoBoard')) {
+    document.querySelector('.countryInfoBoard').remove()
+  }
 }
 
 export function addButtonsListeners () {
 
     document.querySelector('#btn-more_info').addEventListener('click', () => {
-      currentDisplay.actionBar.hide()
-      currentDisplay.elements.mainInfo.hide()
+      if(currentDisplay.detailInfoButtonStatus){
+        currentDisplay.backButtonStatus = false
+        const mainInfoBoard = homeElements.mainInfo.element
+        mainInfoBoard.addEventListener('animationend', () => {
+          console.log('animation end')
+          if (currentDisplay.detailInfoBoardStatus === false) {
+            currentDisplay.detailInfoBoard.create()
+          } else {
+            currentDisplay.detailInfoBoard.show()
+          }
+        }, {once:true})
+        
+        hideStartInfo()
+      }
     })
     
     
@@ -45,13 +55,10 @@ export function addButtonsListeners () {
   })
 }
   
-document.querySelector('.home-random_main-info').addEventListener('animationend', (e) => {
-  if(e.target.classList.contains('animationSlideDown')){
-    currentDisplay.showDetailInfoBoard()
-  }
-})
+
    
 function reloadCountry () {
+  currentDisplay.detailInfoBoardStatus = false
 
   document.querySelector('.reload-element').addEventListener('animationend', () => {
     loadNewCountry()
@@ -65,12 +72,14 @@ function reloadCountry () {
 
 export const currentDisplay = {
     elements: homeElements,
+    detailInfoBoardStatus: false,
+    backButtonStatus: false,
+    detailInfoButtonStatus: true,
     actionBar: {
       show() {
         currentDisplay.elements.backButton.hide()
         currentDisplay.elements.nameTagSection.show()
         currentDisplay.elements.actionSection.show()
-  
       },
       hide() {
         currentDisplay.elements.nameTagSection.hide()
@@ -78,12 +87,28 @@ export const currentDisplay = {
         currentDisplay.elements.backButton.show()
       }
     },
-    showDetailInfoBoard() {
-      createDetailInfoBoard()
+    detailInfoBoard: {
+      create(){
+        clearDetailInfo()
+        createDetailInfo()
+        currentDisplay.detailInfoBoardStatus = true
+        
+      },
+      show(){
+        currentDisplay.elements.infoBoard.show()
+        
+      }
     },
+
     showStartInfoBoard() {
       currentDisplay.elements.mainInfo.show()
     }
   }
   
 
+function hideStartInfo () {
+  
+  currentDisplay.actionBar.hide()
+  currentDisplay.elements.mainInfo.hide()
+
+}

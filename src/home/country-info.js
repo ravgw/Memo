@@ -1,7 +1,8 @@
 import { currentRandomCounrty } from "../api/api-utilities/country.js"
+import { homeElements } from '../home/home-elements.js'
 
 
-export async function embedCountryInfo  () {
+export async function createDetailInfoNewBoard  () {
     createBoard(currentRandomCounrty)
 }
 
@@ -11,6 +12,11 @@ function createBoard (randomCounrty) {
     board.classList.add('countryInfoBoard')
     board.classList.add('animationSlideUp')
     infoSection.appendChild(board)
+
+    homeElements.addElement('infoBoard', board,
+    'animationSlideUp',
+    'animationSlideDown',
+    )
 
     const infoArray = selectInformations(randomCounrty)
     for (const element of infoArray) {
