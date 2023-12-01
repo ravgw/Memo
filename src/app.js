@@ -1,6 +1,6 @@
-import { embedHomeRandomCountry }  from './components/home-random.js'
+import { loadNewCountry }  from './components/home-random.js'
 import { currentDisplay, addButtonsListeners} from './components/home-action-buttons.js'
 
-embedHomeRandomCountry()
+loadNewCountry()
 addButtonsListeners()
 

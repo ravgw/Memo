@@ -1,5 +1,5 @@
-import { homeElements } from '../home/home-elements.js'
-import { embedHomeRandomCountry } from './home-random.js'
+import { homeElements, reloadCountryElements } from '../home/home-elements.js'
+import { loadNewCountry } from './home-random.js'
 import { embedCountryInfo } from '../home/country-info.js'
 
 
@@ -52,24 +52,17 @@ document.querySelector('.home-random_main-info').addEventListener('animationend'
 })
    
 function reloadCountry () {
-  const reloadElemnts = document.querySelectorAll('.reload-element')
 
   document.querySelector('.reload-element').addEventListener('animationend', () => {
-    embedHomeRandomCountry()
+    loadNewCountry()
   }, {once:true})
 
-  reloadElemnts.forEach((e) => {
-    e.classList.add('animationHideByScale')
-  })
+  for ( const element of Object.values(reloadCountryElements)) {
+    element.hide()
+  }
 
 }
 
-function tester (cos) {
-  cos.forEach((e) => {
-    e.classList.remove('animationHideByScale')
-    e.classList.add('animationShowByScale')
-  })
-}
 export const currentDisplay = {
     elements: homeElements,
     actionBar: {

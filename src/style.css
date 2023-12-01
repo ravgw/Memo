@@ -252,11 +252,33 @@ N
 }
 
 .animationShowByScale {
-    animation: showByScale forwards 0.4s ease;
+    animation: showByScale forwards 0.3s ease;
 }
 
 .animationHideByScale {
     animation: hideByScale forwards 0.3s ease;
+}
+
+.animationShowByScale2 {
+    animation: showByScale forwards 0.4s ease;
+}
+
+.animationHideByScale2 {
+    animation: hideByScale forwards 0.4s ease;
+}
+.animationShowByScale3 {
+    animation: showByScale forwards 0.5s ease;
+}
+
+.animationHideByScale3 {
+    animation: hideByScale forwards 0.5s ease;
+}
+.animationShowByScale4 {
+    animation: showByScale forwards 0.6s ease;
+}
+
+.animationHideByScale4 {
+    animation: hideByScale forwards 0.6s ease;
 }
 
 .showBackToReloadButton {
