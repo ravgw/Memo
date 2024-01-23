@@ -7,7 +7,7 @@ export async function createDetailInfoNewBoard  () {
 }
 
 function createBoard (randomCounrty) {
-    const infoSection = document.querySelector('.home-random_section-info')
+    const infoSection = document.querySelector('#main-info_test_div')
     const board = document.createElement('div')
     board.classList.add('countryInfoBoard')
     board.classList.add('animationSlideUp')

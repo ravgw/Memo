@@ -32,7 +32,6 @@ export function addButtonsListeners () {
         currentDisplay.backButtonStatus = false
         const mainInfoBoard = homeElements.mainInfo.element
         mainInfoBoard.addEventListener('animationend', () => {
-          console.log('animation end')
           if (currentDisplay.detailInfoBoardStatus === false) {
             currentDisplay.detailInfoBoard.create()
           } else {
@@ -107,8 +106,6 @@ export const currentDisplay = {
   
 
 function hideStartInfo () {
-  
   currentDisplay.actionBar.hide()
   currentDisplay.elements.mainInfo.hide()
-
 }

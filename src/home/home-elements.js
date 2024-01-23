@@ -51,6 +51,8 @@ export const homeElements = {
     }
 }
 
+//use for appropriate elements 
+
 export const reloadCountryElements = {
     flag: new animationElement(
         document.querySelector('.home-random_flag'),
