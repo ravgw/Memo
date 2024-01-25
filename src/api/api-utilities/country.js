@@ -12,6 +12,7 @@ export async function drawRandomCountry () {
         currentRandomCounrty = country
 
     return country
+
 }   
 
 export let currentRandomCounrty
