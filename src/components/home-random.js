@@ -1,5 +1,5 @@
-import { drawRandomCountry} from '../api/api-utilities/country.js'
-import { getWeather } from '../api/api-utilities/weather.js'
+import { drawRandomCountry} from '../api/country.js'
+import { getWeather } from '../api/weather.js'
 import { reloadCountryElements } from '../home/home-elements.js'
 
 export async function loadNewCountry() {

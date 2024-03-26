@@ -1,4 +1,4 @@
-import { currentRandomCounrty } from "../api/api-utilities/country.js"
+import { currentRandomCounrty } from "../api/country.js"
 import { homeElements } from '../home/home-elements.js'
 
 
