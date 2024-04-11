@@ -21,5 +21,12 @@ export async function loadNewCountry() {
   for ( const element of Object.values(reloadCountryElements)) {
     element.show()
   }
+
+  function changeBackground (flag) {
+    document.querySelector('.home-random_section-info').style.setProperty("background-image", `url(${flag})`)
+    console.log(flag)
+}
+
+changeBackground(country.flags.png)
 }
 
