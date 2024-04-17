@@ -79,14 +79,14 @@ function selectInformations(country) {
 
     const informations =
     [
-        new info('Capital: ', country.capital),
-        new info('Car side: ',country.car.side),
-        new info('Currency: ', Object.values(country.currencies).map((currency) => `${currency.symbol} ${currency.name}`),'Currencies: '),
-        new info('Language: ', Object.values(country.languages),'Languages: '),
         new info('Name common: ', country.name.common),
         new info('Name official: ', country.name.official),
-        new info('Population: ', country.population.toLocaleString()),
+        new info('Capital: ', country.capital),
         new info('Region: ', country.region),
+        new info('Population: ', country.population.toLocaleString()),
+        new info('Currency: ', Object.values(country.currencies).map((currency) => `${currency.symbol} ${currency.name}`),'Currencies: '),
+        new info('Language: ', Object.values(country.languages),'Languages: '),
+        new info('Car side: ',country.car.side),
         new info('Timezone: ', country.timezones, 'Timezones: '),
     ]   
 

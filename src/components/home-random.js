@@ -9,24 +9,17 @@ export async function loadNewCountry() {
   const elements = reloadCountryElements
 
 // country info
+console.log(country)
   elements.countryNameTag.element.innerText = country.name.common
-  elements.capitalNameTag.element.innerText = country.capital
+  elements.capitalNameTag.element.innerText = country.capital ?? 'Radom'
   elements.flag.element.src = country.flags.png
 // weather info
-  elements.weatherTemp.element.innerHTML = `${weather.current.temp_c} &#176;C`
-  elements.capitalLocalTime.element.innerText = weather.location.localtime
-  elements.weatherText.element.innerText = weather.current.condition.text
-  elements.weatherIcon.element.src = weather.current.condition.icon
+  elements.weatherTemp.element.innerHTML = weather.temp
+  elements.capitalLocalTime.element.innerText = weather.time
+  elements.weatherText.element.innerText = weather.conditions
+  elements.weatherIcon.element.src = weather.icon
 
   for ( const element of Object.values(reloadCountryElements)) {
     element.show()
   }
-
-  function changeBackground (flag) {
-    document.querySelector('.home-random_section-info').style.setProperty("background-image", `url(${flag})`)
-    console.log(flag)
 }
-
-changeBackground(country.flags.png)
-}
-
