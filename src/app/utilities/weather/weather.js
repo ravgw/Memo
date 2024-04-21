@@ -1,4 +1,4 @@
-import { fetchWeather } from './api.js'
+import { fetchWeather } from '../../../api/api.js'
 
 export async function getWeather(location) { 
     try {

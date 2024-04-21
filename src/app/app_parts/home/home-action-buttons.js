@@ -1,6 +1,6 @@
-import { homeElements, reloadCountryElements } from '../home/home-elements.js'
-import { loadNewCountry } from './home-random.js'
-import { createDetailInfoNewBoard } from '../home/country-info.js'
+import { homeElements, reloadCountryElements } from '../../components/home-elements.js'
+import { loadNewCountry } from '../home/home-random.js'
+import { createDetailInfoNewBoard } from '../../utilities/countries/country-info.js'
 
 
 function createDetailInfo() {

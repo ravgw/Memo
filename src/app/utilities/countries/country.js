@@ -1,4 +1,4 @@
-import { fetchCountries } from './api.js'
+import { fetchCountries } from '../../../api/api.js'
 
 
 export async function drawRandomCountry () {

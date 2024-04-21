@@ -1,5 +1,5 @@
-import { currentRandomCounrty } from "../api/country.js"
-import { homeElements } from '../home/home-elements.js'
+import { currentRandomCounrty } from "./country.js"
+import { homeElements } from '../../components/home-elements.js'
 
 
 export async function createDetailInfoNewBoard  () {
@@ -60,14 +60,24 @@ function embedInfo (nametag, value) {
     return infoContainer
 } 
 
-function selectInformations(country) {
+export function selectInformations(country) {
 
     class info {
         constructor (tag,value,multipleTag) {
             this.tag = tag
             this.multipleTag = multipleTag
-            this.value = value
+            this.value
+            this.setValue(value)
             this.checkMultiple()
+        }
+
+        setValue(value) {
+            try {
+                this.value = value()
+            } catch (e) {
+                // console.log(e)
+                this.value = value
+            }
         }
 
         checkMultiple() {
@@ -75,6 +85,7 @@ function selectInformations(country) {
                 this.tag = this.multipleTag
             }
         }
+
     }
 
     const informations =
@@ -84,7 +95,15 @@ function selectInformations(country) {
         new info('Capital: ', country.capital),
         new info('Region: ', country.region),
         new info('Population: ', country.population.toLocaleString()),
-        new info('Currency: ', Object.values(country.currencies).map((currency) => `${currency.symbol} ${currency.name}`),'Currencies: '),
+        new info('Currency: ',function test (){ 
+            try {
+                const value = Object.values(country.currencies).map((currency) => `${currency.symbol} ${currency.name}`)
+
+                return value
+            }catch(e){
+            return 'Ds'
+            }
+    },'Currencies: '),
         new info('Language: ', Object.values(country.languages),'Languages: '),
         new info('Car side: ',country.car.side),
         new info('Timezone: ', country.timezones, 'Timezones: '),
