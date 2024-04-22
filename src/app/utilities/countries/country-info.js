@@ -1,5 +1,6 @@
 import { currentRandomCounrty } from "./country.js"
 import { homeElements } from '../../components/home-elements.js'
+import { getCountry } from './select_country_info.js'
 
 
 export async function createDetailInfoNewBoard  () {
@@ -18,7 +19,7 @@ function createBoard (randomCounrty) {
     'animationSlideDown',
     )
 
-    const infoArray = selectInformations(randomCounrty)
+    const infoArray = getCountry(randomCounrty)
     for (const element of infoArray) {
 
         const info = embedInfo(element.tag, element.value)
@@ -60,54 +61,4 @@ function embedInfo (nametag, value) {
     return infoContainer
 } 
 
-export function selectInformations(country) {
 
-    class info {
-        constructor (tag,value,multipleTag) {
-            this.tag = tag
-            this.multipleTag = multipleTag
-            this.value
-            this.setValue(value)
-            this.checkMultiple()
-        }
-
-        setValue(value) {
-            try {
-                this.value = value()
-            } catch (e) {
-                // console.log(e)
-                this.value = value
-            }
-        }
-
-        checkMultiple() {
-            if ( this.value instanceof Array && this.value.length > 1) {
-                this.tag = this.multipleTag
-            }
-        }
-
-    }
-
-    const informations =
-    [
-        new info('Name common: ', country.name.common),
-        new info('Name official: ', country.name.official),
-        new info('Capital: ', country.capital),
-        new info('Region: ', country.region),
-        new info('Population: ', country.population.toLocaleString()),
-        new info('Currency: ',function test (){ 
-            try {
-                const value = Object.values(country.currencies).map((currency) => `${currency.symbol} ${currency.name}`)
-
-                return value
-            }catch(e){
-            return 'Ds'
-            }
-    },'Currencies: '),
-        new info('Language: ', Object.values(country.languages),'Languages: '),
-        new info('Car side: ',country.car.side),
-        new info('Timezone: ', country.timezones, 'Timezones: '),
-    ]   
-
-    return informations
-}

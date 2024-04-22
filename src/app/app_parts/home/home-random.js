@@ -2,7 +2,7 @@ import { drawRandomCountry } from '../../utilities/countries/country.js'
 import { getWeather } from '../../utilities/weather/weather.js'
 import { reloadCountryElements } from '../../components/home-elements.js'
 import { fetchCountries } from '../../../api/api.js'
-import { selectInformations } from '../../utilities/countries/country-info.js'
+import { getCountry } from '../../utilities/countries/select_country_info.js'
 
 export async function loadNewCountry() {
 
@@ -31,9 +31,9 @@ async function countriesList() {
     const list = await fetchCountries()
     let i = 0
     for ( const element of Object.values(list)) {
-      console.log(i)
+      // console.log(i)
       i++
-      console.log(selectInformations(element))
+      // console.log(getCountry(element))
     }
   } catch (e) {
     console.log(e)
