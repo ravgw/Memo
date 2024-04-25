@@ -1,20 +1,19 @@
-import { hideBoard, showBoard } from '../utilities/utilities.js'
-import { homeBoard,navigationBoard } from '../components/home-elements.js'
-
-
 export function loadNavigation () {
 const activationArea = document.querySelector('navigation')
+// default value of activationArea height from stylesheet
+// have to be '%' unit 
+const defaultHeight = '5%'
 
 let naviStatus = false
 
 activationArea.addEventListener('click', () => {
     switch (naviStatus) {
         case false:
-            console.log(`F: ${naviStatus}`)
+            unfoldNavigation()
             naviStatus = !naviStatus
             break;
         case true:
-            console.log(`T: ${naviStatus}`)
+            foldNavigation()
             naviStatus = !naviStatus
             break;
         default:
@@ -25,11 +24,9 @@ activationArea.addEventListener('click', () => {
 function unfoldNavigation () {
     activationArea.style.height = activationArea.clientHeight === 100 ? 'auto' : '100vh';
 }
-// const board = document.querySelector('main')
 
-// const navigation = document.createElement('div')
-// navigation.classList.add('navigation-container')
-// board.appendChild(navigation)
+function foldNavigation () {
+    activationArea.style.height = defaultHeight
+}
 
-console.log(navigation)
 }
