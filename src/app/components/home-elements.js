@@ -9,11 +9,26 @@ class animationElement {
         this.element.classList.add(this.hideClass)
     }
     show() {
+        console.log(this)
         this.element.classList.add(this.showClass)
-         this.element.classList.remove(this.hideClass)
+        this.element.classList.remove(this.hideClass)
     }
 }
 
+export const homeBoard = {
+    mainBoard: new animationElement(
+        document.querySelector('.home-random_container'),
+        'animationSlideUp',
+        'animationSlideDown',
+    )
+}
+export const navigationBoard = {
+    mainBoard: new animationElement(
+        document.querySelector('.navigation-container'),
+        'animationSlideUp',
+        'animationSlideDown',
+    )
+}
 
 export const homeElements = {
     nameTagSection: new animationElement(

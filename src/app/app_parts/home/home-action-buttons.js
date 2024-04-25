@@ -1,6 +1,7 @@
 import { homeElements, reloadCountryElements } from '../../components/home-elements.js'
 import { loadNewCountry } from '../home/home-random.js'
 import { createDetailInfoNewBoard } from '../../utilities/countries/country-info.js'
+import { currentDisplay } from '../../utilities/set_display.js'
 
 
 function createDetailInfo() {
@@ -69,43 +70,9 @@ function reloadCountry () {
 
 }
 
-export const currentDisplay = {
-    elements: homeElements,
-    detailInfoBoardStatus: false,
-    backButtonStatus: false,
-    detailInfoButtonStatus: true,
-    actionBar: {
-      show() {
-        currentDisplay.elements.backButton.hide()
-        currentDisplay.elements.nameTagSection.show()
-        currentDisplay.elements.actionSection.show()
-      },
-      hide() {
-        currentDisplay.elements.nameTagSection.hide()
-        currentDisplay.elements.actionSection.hide()
-        currentDisplay.elements.backButton.show()
-      }
-    },
-    detailInfoBoard: {
-      create(){
-        clearDetailInfo()
-        createDetailInfo()
-        currentDisplay.detailInfoBoardStatus = true
-        
-      },
-      show(){
-        currentDisplay.elements.infoBoard.show()
-        
-      }
-    },
-
-    showStartInfoBoard() {
-      currentDisplay.elements.mainInfo.show()
-    }
-  }
   
 
-function hideStartInfo () {
+export function hideStartInfo () {
   currentDisplay.actionBar.hide()
   currentDisplay.elements.mainInfo.hide()
 }

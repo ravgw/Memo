@@ -26,17 +26,17 @@ export async function loadNewCountry() {
   }
 } 
 
-async function countriesList() {
-  try {
-    const list = await fetchCountries()
-    let i = 0
-    for ( const element of Object.values(list)) {
-      // console.log(i)
-      i++
-      // console.log(getCountry(element))
-    }
-  } catch (e) {
-    console.log(e)
-  }
-}
-countriesList()
+// async function countriesList() {
+//   try {
+//     const list = await fetchCountries()
+//     let i = 0
+//     for ( const element of Object.values(list)) {
+//       // console.log(i)
+//       i++
+//       // console.log(getCountry(element))
+//     }
+//   } catch (e) {
+//     console.log(e)
+//   }
+// }
+// countriesList()
