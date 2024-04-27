@@ -46,6 +46,8 @@ function foldNavigation () {
 
 function generateNavi () {
     const target = document.querySelector('navigation')
+    addNaviHearder(target)
+
     const listContainer = document.createElement('div')
     listContainer.classList.add('navigationContainer')
 
@@ -61,4 +63,23 @@ function generateNavi () {
 
     target.appendChild(listContainer)
 
+}
+
+function addNaviHearder (target) {
+    const headerContainer = document.createElement('div')
+    headerContainer.classList.add('naviHeaderContainer')
+    target.appendChild(headerContainer)
+
+    const header = document.createElement('h1')
+    header.innerText = 'SILKIPP'
+    headerContainer.appendChild(header)
+
+    const arrows = document.createElement('div')
+    headerContainer.appendChild(arrows)
+
+    for ( let i = 1; i <= 3; i++) {
+        const arrow = document.createElement('p')
+        arrow.innerText = 'v'
+        arrows.appendChild(arrow)
+    }
 }

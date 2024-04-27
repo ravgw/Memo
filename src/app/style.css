@@ -21,14 +21,35 @@ navigation {
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column-reverse;
     width: 100%;
     height: 5%;
     background-color: #333;
     border-bottom: 1px solid red;
-    box-sizing: border-box;
     transition: height 0.5s ease;
     overflow: hidden;
     z-index: 1000;
+}
+
+.navigationContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.naviHeaderContainer {
+    display: flex;
+    background-color: antiquewhite;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+navigation h1 {
+    font-size: 2rem;
 }
 
 main {
