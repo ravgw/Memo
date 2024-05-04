@@ -75,11 +75,15 @@ function addNaviHearder (target) {
     headerContainer.appendChild(header)
 
     const arrows = document.createElement('div')
+    arrows.classList.add('naviArrowsContainer')
     headerContainer.appendChild(arrows)
 
     for ( let i = 1; i <= 3; i++) {
-        const arrow = document.createElement('p')
-        arrow.innerText = 'v'
+        const arrow = document.createElement('img')
+        arrow.classList.add(`naviArrow${i}`)
+        arrow.src = "../../components/img/icons8-arrow-down-24.png"
         arrows.appendChild(arrow)
     }
 }
+
+
