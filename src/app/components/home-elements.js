@@ -9,7 +9,7 @@ class animationElement {
         this.element.classList.add(this.hideClass)
     }
     show() {
-        console.log(this)
+        // console.log(this)
         this.element.classList.add(this.showClass)
         this.element.classList.remove(this.hideClass)
     }

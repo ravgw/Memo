@@ -63,6 +63,7 @@ navigation {
 .naviArrowsContainer {
     display: flex;
     flex-direction: row;
+    transition: transform 0.5s;
 }
 
 .naviArrow1,

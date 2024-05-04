@@ -14,6 +14,7 @@ const defaultHeight = '5%'
 
 let naviStatus = false
 let naviGenerated = false
+let arrowsRotated = false
 
 if(!naviGenerated) {
     generateNavi()
@@ -25,10 +26,12 @@ activationArea.addEventListener('click', () => {
         case false:
             unfoldNavigation()
             naviStatus = !naviStatus
+            rotateArrows(arrowsRotated)
             break;
         case true:
             foldNavigation()
             naviStatus = !naviStatus
+            rotateArrows(arrowsRotated)
             break;
         default:
             console.log(`navi err: ${naviStatus}.`);
@@ -41,6 +44,22 @@ function unfoldNavigation () {
 
 function foldNavigation () {
     activationArea.style.height = defaultHeight
+}
+function rotateArrows(arrowsState) {
+    const arrowsContainer = document.querySelector('.naviArrowsContainer')
+    switch(arrowsState) {
+        case false:
+            arrowsContainer.style.transform = 'rotateX(180deg)'
+            arrowsRotated = true
+            break;
+        case true:
+            arrowsContainer.style.transform = 'rotateX(0deg)'
+            arrowsRotated = false
+            break;
+        default:
+            console.log(`navi err: ${arrowsRotated}.`);
+
+    }
 }
 }
 
@@ -58,7 +77,7 @@ function generateNavi () {
         const el = document.createElement('li')
         el.innerText = li[0]
         navigationList.appendChild(el)
-        console.log(li[1])
+        // console.log(li[1])
     }
 
     target.appendChild(listContainer)
