@@ -77,7 +77,6 @@ function generateNavi () {
         const el = document.createElement('li')
         el.innerText = li[0]
         navigationList.appendChild(el)
-        // console.log(li[1])
     }
 
     target.appendChild(listContainer)
