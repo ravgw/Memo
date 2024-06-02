@@ -1,9 +1,8 @@
 const NavigationItem = [
-    ['Home', 'home'],
-    ['Country List', 'CL'],
-    ['Credits', "credits"]
+    ['Home', 'home','=home'],
+    ['Country List', 'CL','=c-list'],
+    ['Credits', "credits",'=cred']
 ]
-
 
 
 export function loadNavigation () {
@@ -75,7 +74,11 @@ function generateNavi () {
 
     for (const li of NavigationItem) {
         const el = document.createElement('li')
-        el.innerText = li[0]
+        const link = document.createElement('a')
+        link.innerText = li[0]
+        link.href = li[2]
+
+        el.appendChild(link)
         navigationList.appendChild(el)
     }
 
