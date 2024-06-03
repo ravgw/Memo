@@ -7,11 +7,12 @@ export function renderHome () {
     main.appendChild(home)
 
 
-    createRandomCountryElements(home)
+    home.appendChild(createRandomCountryElements())
+    home.appendChild(createNameOfRandomCountry())
 }
 
 
-function createRandomCountryElements (target) {
+function createRandomCountryElements () {
 
     const randomCountry = document.createElement('div')
     randomCountry.classList.add("randomCountry")
@@ -59,6 +60,20 @@ function createRandomCountryElements (target) {
     conditionsTemp.classList.add("weather-conditions__temp")
     capitalWeatherConditions.appendChild(conditionsTemp)
 
-    target.appendChild(randomCountry)
+    return randomCountry
 }
  
+function createNameOfRandomCountry () {
+    const name = document.createElement('div')
+    name.classList.add('nameOfRandomCountry')
+
+    const content = document.createElement('div')
+    content.classList.add('nameOfRandomCountry-content')
+    name.appendChild(content)
+
+    const nametag = document.createElement('div')
+    content.classList.add('nameOfRandomCountry-content__nametag')
+    content.appendChild(nametag)
+
+    return name
+}
