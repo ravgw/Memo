@@ -9,6 +9,7 @@ export function renderHome () {
 
     home.appendChild(createRandomCountryElements())
     home.appendChild(createNameOfRandomCountry())
+    home.appendChild(createHomeActions())
 }
 
 
@@ -64,16 +65,47 @@ function createRandomCountryElements () {
 }
  
 function createNameOfRandomCountry () {
-    const name = document.createElement('div')
-    name.classList.add('nameOfRandomCountry')
+    const nameContainer = document.createElement('div')
+    nameContainer.classList.add('nameOfRandomCountry')
 
     const content = document.createElement('div')
     content.classList.add('nameOfRandomCountry-content')
-    name.appendChild(content)
+    nameContainer.appendChild(content)
 
     const nametag = document.createElement('div')
     content.classList.add('nameOfRandomCountry-content__nametag')
     content.appendChild(nametag)
 
-    return name
+    return nameContainer
+}
+
+function createHomeActions () {
+    const actionsContainer = document.createElement('div')
+    actionsContainer.classList.add('homeActions')
+
+    const buttons = document.createElement('div')
+    buttons.classList.add('homeButtons')
+    actionsContainer.appendChild(buttons)
+
+    const buttonMore = document.createElement('button')
+    buttonMore.classList.add('homeButton')
+    buttonMore.id = 'homeButtons__more'
+
+    const buttonMoreImg = document.createElement('img')
+    buttonMoreImg.src = '../../components/img/icons8-view-more-64.png'
+    buttonMore.appendChild(buttonMoreImg)
+
+    buttons.appendChild(buttonMore)
+
+    const buttonDraw = document.createElement('button')
+    buttonMore.classList.add('homeButton')
+    buttonMore.id = 'homeButtons__draw'
+
+    const buttonDrawImg = document.createElement('img')
+    buttonDrawImg.src = '../../components/img/icons8-dice-cubes-64.png'
+    buttonDraw.appendChild(buttonMoreImg)
+    
+    buttons.appendChild(buttonDraw)
+
+    return actionsContainer
 }

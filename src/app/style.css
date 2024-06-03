@@ -113,7 +113,6 @@ navigation {
 
 main {
     grid-row-start: 2;
-    padding-top: 10%;
     height: 100%;
     width: 100%;
     display: flex;
@@ -121,12 +120,17 @@ main {
     align-items: center;
 }
 
+.home {
+    height: 100%;
+    width: 100%;
+}
+
 footer {
     height: 100%;
 
 }
 
-.home-random_container {
+.randomCountry{
     width: 100%;
     max-width: 1000px;
     height: 100%;
@@ -136,7 +140,7 @@ footer {
     justify-content: flex-start;
 }
 
-.home-random_section-info-container {
+.randomCountry-capital {
     background-size: auto 100%;
     width: 80%;
     height: 100%;
@@ -158,7 +162,7 @@ footer {
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8099614845938375) 40%, rgba(255,255,255,1) 100%);
 }
 
-.section-info_flag {
+.randomCountry__flag {
     width: 85%;
     max-width: 300px;
     padding-top: 30px;
@@ -176,12 +180,12 @@ footer {
     text-align: center;
 }
 
-.home-random_capital {
+.capital-info__name {
     font-size: 1.6rem;
     font-family: "Nanum Myeongjo", serif;
 }
 
-.home-random_local-time {
+.capital-info__localtime {
     font-size: 0.8rem;
     font-family: "Nanum Myeongjo", serif;
     color: black;
