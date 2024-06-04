@@ -28,7 +28,7 @@ function clearDetailInfo() {
 
 export function addButtonsListeners () {
 
-    document.querySelector('#btn-more_info').addEventListener('click', () => {
+    document.querySelector('#homeButtons__more').addEventListener('click', () => {
       if(currentDisplay.detailInfoButtonStatus){
         currentDisplay.backButtonStatus = false
         const mainInfoBoard = homeElements.mainInfo.element
@@ -45,7 +45,7 @@ export function addButtonsListeners () {
     })
     
     
-    document.querySelector('#btn-reload_country').addEventListener('click', () => {
+    document.querySelector('#homeButtons__draw').addEventListener('click', () => {
       reloadCountry()
     })
     

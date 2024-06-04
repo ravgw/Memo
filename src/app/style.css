@@ -281,7 +281,7 @@ footer {
     max-height: 80px;
 }
 
-.back-button_section {
+.homeButtons__back {
     position: relative;
     display: flex;
     align-items: center;
@@ -292,7 +292,7 @@ footer {
     overflow: hidden;
     animation-delay: 1s;
 }
-.back-button_section img {
+.homeButtons__back img {
     position: absolute;
     display: inherit;
     top: 5%;

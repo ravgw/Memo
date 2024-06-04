@@ -5,9 +5,9 @@ import { renderHome } from '../app/app_parts/home/home.js'
 
 
 loadNavigation()
-// loadNewCountry()
-// addButtonsListeners()
 renderHome()
+// loadNewCountry()
+addButtonsListeners()
 
 if (window.location.search.includes("=home")) {
     console.log('main')

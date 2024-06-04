@@ -10,6 +10,7 @@ export function renderHome () {
     home.appendChild(createRandomCountryElements())
     home.appendChild(createNameOfRandomCountry())
     home.appendChild(createHomeActions())
+    home.appendChild(createBackButton())
 }
 
 
@@ -106,4 +107,15 @@ function createHomeActions () {
     buttons.appendChild(buttonDraw)
 
     return actionsContainer
+}
+
+function createBackButton () {
+    const back = document.createElement('div')
+    back.classList.add('homeButtons__back')
+
+    const backImg = document.createElement('img')
+    backImg.src = '../../components/img/icons8-arrow-up-50.png'
+    back.appendChild(backImg)
+
+    return back
 }
