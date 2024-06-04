@@ -90,7 +90,6 @@ function createHomeActions () {
     const buttonMore = document.createElement('button')
     buttonMore.classList.add('homeButton')
     buttonMore.id = 'homeButtons__more'
-
     const buttonMoreImg = document.createElement('img')
     buttonMoreImg.src = '../../components/img/icons8-view-more-64.png'
     buttonMore.appendChild(buttonMoreImg)
@@ -98,12 +97,11 @@ function createHomeActions () {
     buttons.appendChild(buttonMore)
 
     const buttonDraw = document.createElement('button')
-    buttonMore.classList.add('homeButton')
-    buttonMore.id = 'homeButtons__draw'
-
+    buttonDraw.classList.add('homeButton')
+    buttonDraw.id = 'homeButtons__draw'
     const buttonDrawImg = document.createElement('img')
     buttonDrawImg.src = '../../components/img/icons8-dice-cubes-64.png'
-    buttonDraw.appendChild(buttonMoreImg)
+    buttonDraw.appendChild(buttonDrawImg)
     
     buttons.appendChild(buttonDraw)
 
