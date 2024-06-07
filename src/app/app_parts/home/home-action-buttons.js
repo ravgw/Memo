@@ -49,22 +49,24 @@ export function addButtonsListeners () {
       reloadCountry()
     })
     
-  document.querySelector('.homeButtons__back').addEventListener('click', () => {
+    document.querySelector('.homeButtons__back').addEventListener('click', () => {
     currentDisplay.actionBar.show()
     currentDisplay.elements.infoBoard.hide()
   })
 }
-  
 
-   
+
+
 function reloadCountry () {
+  console.log(document.querySelector('.homeActions'))
   currentDisplay.detailInfoBoardStatus = false
 
-  document.querySelector('.homeButton').addEventListener('animationend', () => {
+  document.querySelector('.nameOfRandomCountry-content__nametag').addEventListener('animationend', () => {
+    console.log('eee?')
     loadNewCountry()
   }, {once:true})
 
-  for ( const element of Object.values(reloadCountryElements)) {
+  for ( const element of Object.values(reloadCountryElements())) {
     element.hide()
   }
 

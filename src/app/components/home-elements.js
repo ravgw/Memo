@@ -109,5 +109,3 @@ export function reloadCountryElements () {
     return reloadCountryElements
 
 }
-
-console.log(document.querySelector('.nameOfRandomCountry-content__nametag'))

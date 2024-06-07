@@ -4,8 +4,6 @@ import { reloadCountryElements } from '../../components/home-elements.js'
 import { fetchCountries } from '../../../api/api.js'
 import { getCountry } from '../../utilities/countries/select_country_info.js'
 
-console.log(reloadCountryElements)
-
 export async function loadNewCountry() {
   
   const country = await drawRandomCountry()
@@ -23,7 +21,8 @@ export async function loadNewCountry() {
   elements.weatherText.element.innerText = weather.conditions
   elements.weatherIcon.element.src = weather.icon
 
-  for ( const element of Object.values(reloadCountryElements)) {
+  for ( const element of Object.values(reloadCountryElements())) {
+    console.log(element)
     element.show()
   }
 } 
