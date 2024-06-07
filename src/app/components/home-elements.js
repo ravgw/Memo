@@ -17,7 +17,7 @@ class animationElement {
 
 export const homeBoard = {
     mainBoard: new animationElement(
-        document.querySelector('.home-random_container'),
+        document.querySelector('.randomCountry'),
         'animationSlideUp',
         'animationSlideDown',
     )
@@ -32,32 +32,32 @@ export const navigationBoard = {
 
 export const homeElements = {
     nameTagSection: new animationElement(
-        document.querySelector('.home-random_section-nametag'),
+        document.querySelector('.nameOfRandomCountry'),
         'animationShow',
         'animationHide'
     ),
     actionSection: new animationElement (
-        document.querySelector('.home-random_section-action'),
+        document.querySelector('.homeActions'),
         'animationShow',
         'animationHide',
     ),
     backButton: new animationElement(
-        document.querySelector('.back-button_section'),
+        document.querySelector('.homeButtons__back'),
         'showBackToReloadButton',
         'hideBackToReloadButton',
     ),
     capitalNameTagAndDate: new animationElement(
-        document.querySelector('.home-random_capital-info'),
+        document.querySelector('.capital-info'),
         'animationSlideUp',
         'animationSlideDown',
     ),
     capitalWeather: new animationElement(
-        document.querySelector('.weather-condition_container'),
+        document.querySelector('.capital-weather'),
         'animationSlideUp',
         'animationSlideDown',
     ),
     mainInfo: new animationElement(
-        document.querySelector('.home-random_main-info'),
+        document.querySelector('.randomCountry-capital'),
         'animationSlideUp',
         'animationSlideDown',
     ),
@@ -67,41 +67,47 @@ export const homeElements = {
 }
 
 //use for appropriate elements 
-
-export const reloadCountryElements = {
-    flag: new animationElement(
-        document.querySelector('.home-random_flag'),
+export function reloadCountryElements () {
+    const reloadCountryElements = {
+        flag: new animationElement(
+        document.querySelector('.randomCountry__flag'),
         'animationShowByScale',
         'animationHideByScale'
     ),
     capitalNameTag: new animationElement(
-        document.querySelector('.home-random_capital'),
+        document.querySelector('.capital-info__name'),
         'animationShowByScale2',
         'animationHideByScale2'
     ),
     capitalLocalTime: new animationElement(
-        document.querySelector('.home-random_local-time'),
+        document.querySelector('.capital-info__localtime'),
         'animationShowByScale2',
         'animationHideByScale2'
     ),
     weatherIcon: new animationElement(
-        document.querySelector('.weather-condition_icon'),
+        document.querySelector('.capital-weather__img'),
         'animationShowByScale3',
         'animationHideByScale3'
     ),
     weatherText: new animationElement(
-        document.querySelector('.weather-condition_text'),
+        document.querySelector('.weather-conditions__text'),
         'animationShowByScale3',
         'animationHideByScale3'
     ),
     weatherTemp: new animationElement(
-        document.querySelector('.weather-condition_temperature'),
+        document.querySelector('.weather-conditions__temp'),
         'animationShowByScale3',
         'animationHideByScale3'
     ),
     countryNameTag: new animationElement(
-        document.querySelector('.home-random_nametag'),
+        document.querySelector('.nameOfRandomCountry-content__nametag'),
         'animationShowByScale4',
         'animationHideByScale4'
     )
+    }
+
+    return reloadCountryElements
+
 }
+
+console.log(document.querySelector('.nameOfRandomCountry-content__nametag'))

@@ -11,6 +11,7 @@ export function renderHome () {
     home.appendChild(createNameOfRandomCountry())
     home.appendChild(createHomeActions())
     home.appendChild(createBackButton())
+
 }
 
 
@@ -27,33 +28,35 @@ function createRandomCountryElements () {
     randomCountryCapital.classList.add("randomCountry-capital")
     randomCountry.appendChild(randomCountryCapital)
     
-    const capital = document.createElement('div')
-    capital.classList.add("capital")
-    randomCountryCapital.appendChild(capital)
+    // const capital = document.createElement('div')
+    // capital.classList.add("capital")
+    // randomCountryCapital.appendChild(capital)
 
     const capitalInfo = document.createElement('div')
     capitalInfo.classList.add("capital-info")
-    capital.appendChild(capitalInfo)
+    randomCountryCapital.appendChild(capitalInfo)
 
     const capitalInfoName = document.createElement('div')
     capitalInfoName.classList.add("capital-info__name")
     capitalInfo.appendChild(capitalInfoName)
+
     const capitalInfoTime = document.createElement('div')
     capitalInfoTime.classList.add("capital-info__localtime")
     capitalInfo.appendChild(capitalInfoTime)
 
     const capitalWeather = document.createElement('div')
     capitalWeather.classList.add("capital-weather")
-    capital.appendChild(capitalWeather)
+    randomCountryCapital.appendChild(capitalWeather)
 
     const weatherImg = document.createElement('img')
-    weatherImg.classList.add("weather__img")
+    weatherImg.classList.add("capital-weather__img")
     capitalWeather.appendChild(weatherImg)
 
     const capitalWeatherConditions = document.createElement('div')
     capitalWeatherConditions.classList.add("capital-weather-conditions")
     capitalWeather.appendChild(capitalWeatherConditions)
 
+    
     const conditionsText = document.createElement('div')
     conditionsText.classList.add("weather-conditions__text")
     capitalWeatherConditions.appendChild(conditionsText)
@@ -74,7 +77,7 @@ function createNameOfRandomCountry () {
     nameContainer.appendChild(content)
 
     const nametag = document.createElement('div')
-    content.classList.add('nameOfRandomCountry-content__nametag')
+    nametag.classList.add('nameOfRandomCountry-content__nametag')
     content.appendChild(nametag)
 
     return nameContainer

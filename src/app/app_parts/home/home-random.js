@@ -4,14 +4,16 @@ import { reloadCountryElements } from '../../components/home-elements.js'
 import { fetchCountries } from '../../../api/api.js'
 import { getCountry } from '../../utilities/countries/select_country_info.js'
 
-export async function loadNewCountry() {
+console.log(reloadCountryElements)
 
+export async function loadNewCountry() {
+  
   const country = await drawRandomCountry()
   const weather = await getWeather(country.capital)
-  const elements = reloadCountryElements
-
-// country info
-// console.log(country)
+  const elements = reloadCountryElements()
+  // console.log(reloadCountryElements)
+  
+  // country info
   elements.countryNameTag.element.innerText = country.name.common
   elements.capitalNameTag.element.innerText = country.capital ?? 'Radom'
   elements.flag.element.src = country.flags.png

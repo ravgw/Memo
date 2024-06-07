@@ -49,7 +49,7 @@ export function addButtonsListeners () {
       reloadCountry()
     })
     
-  document.querySelector('.back-button_section').addEventListener('click', () => {
+  document.querySelector('.homeButtons__back').addEventListener('click', () => {
     currentDisplay.actionBar.show()
     currentDisplay.elements.infoBoard.hide()
   })
@@ -60,7 +60,7 @@ export function addButtonsListeners () {
 function reloadCountry () {
   currentDisplay.detailInfoBoardStatus = false
 
-  document.querySelector('.reload-element').addEventListener('animationend', () => {
+  document.querySelector('.homeButton').addEventListener('animationend', () => {
     loadNewCountry()
   }, {once:true})
 

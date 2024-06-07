@@ -164,7 +164,7 @@ footer {
     padding-top: 30px;
 }
 
-.capital {
+.randomCountry-capital {
     height: 100%;
     width: 100%;
     display: flex;
@@ -172,6 +172,13 @@ footer {
     justify-content: space-around;
     align-items: center;
 }
+
+.capital {
+    width: 100%;
+    height: 100%;
+}
+
+
 .capital-info {
     text-align: center;
 }
@@ -187,14 +194,14 @@ footer {
     color: black;
 }
 
-.capital-weather-conditions {
+.capital-weather {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
 
-.weather-condition {
+.capital-weather-conditions {
     width: 50%;
     color: black;
     font-size: 1.2rem;
@@ -261,7 +268,7 @@ footer {
     align-items: center;
 }
 
-.weather__img {
+.capital-weather__img {
     height: 64px;
     width: 64px;
     max-height: 80px;
