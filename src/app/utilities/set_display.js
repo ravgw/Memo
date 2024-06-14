@@ -1,17 +1,13 @@
-import { homeElements } from '../components/home-elements.js'
+import { getHomeElements } from '../components/home-elements.js'
+import { createDetailInfoNewBoard } from './countries/country-info.js'
 
 function setDisplay(board) {
   
 }
 
 
-
-
-
-
-
 export const currentDisplay = {
-    elements: homeElements,
+    elements: getHomeElements,
     detailInfoBoardStatus: false,
     backButtonStatus: false,
     detailInfoButtonStatus: true,
@@ -22,14 +18,14 @@ export const currentDisplay = {
         currentDisplay.elements.actionSection.show()
       },
       hide() {
-        currentDisplay.elements.nameTagSection.hide()
-        currentDisplay.elements.actionSection.hide()
-        currentDisplay.elements.backButton.show()
+        currentDisplay.elements().nameTagSection.hide()
+        currentDisplay.elements().actionSection.hide()
+        currentDisplay.elements().backButton.show()
       }
     },
     detailInfoBoard: {
       create(){
-        clearDetailInfo()
+        // clearDetailInfo()
         createDetailInfo()
         currentDisplay.detailInfoBoardStatus = true
         
@@ -43,4 +39,20 @@ export const currentDisplay = {
     showStartInfoBoard() {
       currentDisplay.elements.mainInfo.show()
     }
+}
+
+function createDetailInfo() {
+
+  createDetailInfoNewBoard()
+  // console.log(getHomeElements())
+  const board = getHomeElements().infoBoard.element
+  
+  board.addEventListener('animationend', (e) => {
+    const classes = e.target.classList
+    if (classes.contains('animationSlideDown'))
+    {
+      currentDisplay.showStartInfoBoard()
+    }
+  })
+
 }

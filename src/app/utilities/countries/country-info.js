@@ -1,5 +1,5 @@
 import { currentRandomCounrty } from "./country.js"
-import { homeElements } from '../../components/home-elements.js'
+import { getHomeElements } from '../../components/home-elements.js'
 import { getCountry } from './select_country_info.js'
 
 
@@ -14,10 +14,12 @@ function createBoard (randomCounrty) {
     board.classList.add('animationSlideUp')
     infoSection.appendChild(board)
 
-    homeElements.addElement('infoBoard', board,
+    getHomeElements().addElement('infoBoard', board,
     'animationSlideUp',
     'animationSlideDown',
     )
+
+    console.log(getHomeElements())
 
     const infoArray = getCountry(randomCounrty)
     for (const element of infoArray) {

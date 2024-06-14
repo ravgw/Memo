@@ -10,10 +10,10 @@ renderHome()
 addButtonsListeners()
 loadNewCountry()
 
-if (window.location.search.includes("=home")) {
-    console.log('main')
-} else if (window.location.search.includes("=c-list")) {
-    console.log('list')
-} else if (window.location.search.includes("=cred")) {
-    console.log('cred')
+if (window.location.search.includes("?home")) {
+    // console.log('main')
+} else if (window.location.search.includes("?clist")) {
+    // console.log('list')
+} else if (window.location.search.includes("?cred")) {
+    // console.log('cred')
 }

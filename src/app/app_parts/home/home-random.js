@@ -22,7 +22,6 @@ export async function loadNewCountry() {
   elements.weatherIcon.element.src = weather.icon
 
   for ( const element of Object.values(reloadCountryElements())) {
-    console.log(element)
     element.show()
   }
 } 

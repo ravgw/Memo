@@ -1,7 +1,7 @@
 const NavigationItem = [
-    ['Home', 'home','=home'],
-    ['Country List', 'CL','=c-list'],
-    ['Credits', "credits",'=cred']
+    ['Home', 'home','home'],
+    ['Country List', 'CL','clist'],
+    ['Credits', "credits",'cred']
 ]
 
 
@@ -33,7 +33,7 @@ activationArea.addEventListener('click', () => {
             rotateArrows(arrowsRotated)
             break;
         default:
-            console.log(`navi err: ${naviStatus}.`);
+            console.log(`navi error: ${naviStatus}.`);
     }
 })
 
@@ -56,7 +56,7 @@ function rotateArrows(arrowsState) {
             arrowsRotated = false
             break;
         default:
-            console.log(`navi err: ${arrowsRotated}.`);
+            console.log(`navi error: ${arrowsRotated}.`);
 
     }
 }
@@ -76,7 +76,7 @@ function generateNavi () {
         const el = document.createElement('li')
         const link = document.createElement('a')
         link.innerText = li[0]
-        link.href = li[2]
+        link.href = `?${li[2]}`
 
         el.appendChild(link)
         navigationList.appendChild(el)
