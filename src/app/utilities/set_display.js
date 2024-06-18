@@ -13,9 +13,9 @@ export const currentDisplay = {
     detailInfoButtonStatus: true,
     actionBar: {
       show() {
-        currentDisplay.elements.backButton.hide()
-        currentDisplay.elements.nameTagSection.show()
-        currentDisplay.elements.actionSection.show()
+        currentDisplay.elements().backButton.hide()
+        currentDisplay.elements().nameTagSection.show()
+        currentDisplay.elements().actionSection.show()
       },
       hide() {
         currentDisplay.elements().nameTagSection.hide()

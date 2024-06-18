@@ -2,10 +2,13 @@ import { loadNewCountry }  from './app_parts/home/home-random.js'
 import { addButtonsListeners} from './app_parts/home/home-action-buttons.js'
 import { loadNavigation } from './components/navigation.js'
 import { renderHome } from './app_parts/home/render-home.js'
+import { getHomeElements } from './components/home-elements.js'
 // import { reloadCountryElements } from '../../components/home-elements.js'
 
 loadNavigation()
 renderHome()
+getHomeElements()
+getHomeElements()
 // console.log(reloadCountryElements)
 addButtonsListeners()
 loadNewCountry()

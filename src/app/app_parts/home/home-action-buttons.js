@@ -15,6 +15,7 @@ export function addButtonsListeners () {
       if(currentDisplay.detailInfoButtonStatus){
         currentDisplay.backButtonStatus = false
         const mainInfoBoard = getHomeElements().mainInfo.element
+        // console.log()
         mainInfoBoard.addEventListener('animationend', () => {
           if (currentDisplay.detailInfoBoardStatus === false) {
             currentDisplay.detailInfoBoard.create()

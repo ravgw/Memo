@@ -30,8 +30,11 @@ export const navigationBoard = {
     )
 }
 
+let homeElementsInstance = null;
+
 export function getHomeElements() {
-    const elements = {
+    if (!homeElementsInstance) {
+    homeElementsInstance = {
     nameTagSection: new animationElement(
         document.querySelector('.nameOfRandomCountry'),
         'animationShow',
@@ -63,15 +66,11 @@ export function getHomeElements() {
         'animationSlideDown',
     ),
     addElement(name, element, showClass, hideClass) {
-        // console.log(name)
-        // console.log(element)
-        // console.log(showClass)
-        // console.log(hideClass)
-        // console.log(elements)
         this[name] = new animationElement(element, showClass, hideClass);
     }
     }
-    return elements
+    }
+    return homeElementsInstance
 }
 
 //use for appropriate elements 

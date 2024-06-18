@@ -12,7 +12,6 @@ function createBoard (randomCounrty) {
     const board = document.createElement('div')
     board.classList.add('countryInfoBoard')
     board.classList.add('animationSlideUp')
-    infoSection.appendChild(board)
 
     getHomeElements().addElement('infoBoard', board,
     'animationSlideUp',
