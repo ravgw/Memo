@@ -1,5 +1,6 @@
 import { getHomeElements } from '../components/home-elements.js'
 import { createDetailInfoNewBoard } from './countries/country-info.js'
+import { clearDetailInfo } from '../app_parts/home/home-action-buttons.js'
 
 function setDisplay(board) {
   
@@ -28,7 +29,6 @@ export const currentDisplay = {
         // clearDetailInfo()
         createDetailInfo()
         currentDisplay.detailInfoBoardStatus = true
-        
       },
       show(){
         currentDisplay.elements.infoBoard.show()

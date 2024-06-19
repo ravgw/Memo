@@ -8,17 +8,14 @@ export async function createDetailInfoNewBoard  () {
 }
 
 function createBoard (randomCounrty) {
-    const infoSection = document.querySelector('.randomCountry-capital')
+    const homeView = document.querySelector('.randomCountry-capital')
     const board = document.createElement('div')
     board.classList.add('countryInfoBoard')
     board.classList.add('animationSlideUp')
-
     getHomeElements().addElement('infoBoard', board,
     'animationSlideUp',
     'animationSlideDown',
     )
-
-    console.log(getHomeElements())
 
     const infoArray = getCountry(randomCounrty)
     for (const element of infoArray) {
@@ -27,6 +24,7 @@ function createBoard (randomCounrty) {
 
         board.appendChild(info)
     }
+    homeView.appendChild(board)
 }
 
 function embedInfo (nametag, value) {

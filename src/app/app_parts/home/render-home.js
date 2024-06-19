@@ -24,17 +24,17 @@ function createRandomCountryElements () {
     randomCountryFlag.classList.add("randomCountry__flag")
     randomCountry.appendChild(randomCountryFlag)
 
-    const randomCountryCapital = document.createElement('div')
-    randomCountryCapital.classList.add("randomCountry-capital")
-    randomCountry.appendChild(randomCountryCapital)
-    
-    // const capital = document.createElement('div')
-    // capital.classList.add("capital")
-    // randomCountryCapital.appendChild(capital)
+    const capital = document.createElement('div')
+    capital.classList.add("randomCountry-capital")
+    randomCountry.appendChild(capital)
+
+    const capitalHomeView = document.createElement('div')
+    capitalHomeView.classList.add("capital-homeview")
+    capital.appendChild(capitalHomeView)
 
     const capitalInfo = document.createElement('div')
     capitalInfo.classList.add("capital-info")
-    randomCountryCapital.appendChild(capitalInfo)
+    capitalHomeView.appendChild(capitalInfo)
 
     const capitalInfoName = document.createElement('div')
     capitalInfoName.classList.add("capital-info__name")
@@ -46,7 +46,7 @@ function createRandomCountryElements () {
 
     const capitalWeather = document.createElement('div')
     capitalWeather.classList.add("capital-weather")
-    randomCountryCapital.appendChild(capitalWeather)
+    capitalHomeView.appendChild(capitalWeather)
 
     const weatherImg = document.createElement('img')
     weatherImg.classList.add("capital-weather__img")

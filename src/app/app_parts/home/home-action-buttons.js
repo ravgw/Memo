@@ -3,7 +3,7 @@ import { loadNewCountry } from '../home/home-random.js'
 import { currentDisplay } from '../../utilities/set_display.js'
 
 
-function clearDetailInfo() {
+export function clearDetailInfo() {
   if (document.querySelector('.countryInfoBoard')) {
     document.querySelector('.countryInfoBoard').remove()
   }
@@ -15,7 +15,6 @@ export function addButtonsListeners () {
       if(currentDisplay.detailInfoButtonStatus){
         currentDisplay.backButtonStatus = false
         const mainInfoBoard = getHomeElements().mainInfo.element
-        // console.log()
         mainInfoBoard.addEventListener('animationend', () => {
           if (currentDisplay.detailInfoBoardStatus === false) {
             currentDisplay.detailInfoBoard.create()

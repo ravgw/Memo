@@ -61,7 +61,7 @@ export function getHomeElements() {
         'animationSlideDown',
     ),
     mainInfo: new animationElement(
-        document.querySelector('.randomCountry-capital'),
+        document.querySelector('.capital-homeview'),
         'animationSlideUp',
         'animationSlideDown',
     ),
