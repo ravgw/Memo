@@ -6,17 +6,13 @@ import { getHomeElements } from './components/home-elements.js'
 // import { reloadCountryElements } from '../../components/home-elements.js'
 
 loadNavigation()
-renderHome()
-getHomeElements()
-getHomeElements()
-// console.log(reloadCountryElements)
-addButtonsListeners()
-loadNewCountry()
 
-if (window.location.search.includes("?home")) {
-    // console.log('main')
+if (window.location.search.includes("?cred")) {
+    console.log('cred')
 } else if (window.location.search.includes("?clist")) {
-    // console.log('list')
-} else if (window.location.search.includes("?cred")) {
-    // console.log('cred')
+    console.log('list')
+} else {
+    renderHome()
+    addButtonsListeners()
+    loadNewCountry()
 }

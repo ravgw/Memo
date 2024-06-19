@@ -12,19 +12,20 @@ export function clearDetailInfo() {
 export function addButtonsListeners () {
 
     document.querySelector('#homeButtons__more').addEventListener('click', () => {
-      if(currentDisplay.detailInfoButtonStatus){
-        currentDisplay.backButtonStatus = false
+      // if(currentDisplay.detailInfoButtonStatus){
+        // currentDisplay.backButtonStatus = false
         const mainInfoBoard = getHomeElements().mainInfo.element
         mainInfoBoard.addEventListener('animationend', () => {
           if (currentDisplay.detailInfoBoardStatus === false) {
             currentDisplay.detailInfoBoard.create()
           } else {
             currentDisplay.detailInfoBoard.show()
+            console.log('xd')
           }
         }, {once:true})
         
         hideStartInfo()
-      }
+      // }
     })
     
     
@@ -34,7 +35,7 @@ export function addButtonsListeners () {
     
     document.querySelector('.homeButtons__back').addEventListener('click', () => {
     currentDisplay.actionBar.show()
-    currentDisplay.elements.infoBoard.hide()
+    currentDisplay.elements().infoBoard.hide()
   })
 }
 

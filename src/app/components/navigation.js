@@ -1,3 +1,4 @@
+import { templates } from '../app_parts/templates.js'
 const NavigationItem = [
     ['Home', 'home','home'],
     ['Country List', 'CL','clist'],
@@ -8,7 +9,7 @@ const NavigationItem = [
 export function loadNavigation () {
 const activationArea = document.querySelector('navigation')
 // default value of activationArea height from stylesheet
-// have to be '%' unit 
+// needed '%' unit 
 const defaultHeight = '5%'
 
 let naviStatus = false
@@ -72,17 +73,28 @@ function generateNavi () {
     const navigationList = document.createElement('ul')
     listContainer.appendChild(navigationList)
 
-    for (const li of NavigationItem) {
+    // for (const li of NavigationItem) {
+    //     const el = document.createElement('li')
+    //     const link = document.createElement('a')
+    //     link.innerText = li[0]
+    //     link.href = `/${li[2]}`
+
+    //     el.appendChild(link)
+    //     navigationList.appendChild(el)
+    // }
+    for (const template of Object.values(templates)) {
         const el = document.createElement('li')
         const link = document.createElement('a')
-        link.innerText = li[0]
-        link.href = `?${li[2]}`
+        link.innerText = template.title
+        link.href = template.hash
 
         el.appendChild(link)
         navigationList.appendChild(el)
     }
 
     target.appendChild(listContainer)
+
+    // console.log()
 
 }
 

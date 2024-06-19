@@ -10,8 +10,8 @@ function setDisplay(board) {
 export const currentDisplay = {
     elements: getHomeElements,
     detailInfoBoardStatus: false,
-    backButtonStatus: false,
-    detailInfoButtonStatus: true,
+    // backButtonStatus: false,
+    // detailInfoButtonStatus: true,
     actionBar: {
       show() {
         currentDisplay.elements().backButton.hide()
@@ -26,18 +26,18 @@ export const currentDisplay = {
     },
     detailInfoBoard: {
       create(){
-        // clearDetailInfo()
+        clearDetailInfo()
         createDetailInfo()
         currentDisplay.detailInfoBoardStatus = true
       },
       show(){
-        currentDisplay.elements.infoBoard.show()
+        currentDisplay.elements().infoBoard.show()
         
       }
     },
 
     showStartInfoBoard() {
-      currentDisplay.elements.mainInfo.show()
+      currentDisplay.elements().mainInfo.show()
     }
 }
 

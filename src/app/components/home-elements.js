@@ -15,13 +15,13 @@ class animationElement {
     }
 }
 
-export const homeBoard = {
-    mainBoard: new animationElement(
-        document.querySelector('.randomCountry'),
-        'animationSlideUp',
-        'animationSlideDown',
-    )
-}
+// export const homeBoard = {
+//     mainBoard: new animationElement(
+//         document.querySelector('.randomCountry'),
+//         'animationSlideUp',
+//         'animationSlideDown',
+//     )
+// }
 export const navigationBoard = {
     mainBoard: new animationElement(
         document.querySelector('.navigation-container'),
