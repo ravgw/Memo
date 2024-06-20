@@ -1,7 +1,14 @@
-export function renderHome () {
+import { loadNavigation } from '../../components/navigation.js'
+export function renderApp () {
     const container = document.querySelector('body')
     const main = document.createElement('main')
     container.appendChild(main)
+
+    loadNavigation()
+}
+
+export function renderRandomCountry () {
+    const main = document.querySelector('main')
     const home = document.createElement('div')
     home.classList.add('home')
     main.appendChild(home)
@@ -11,7 +18,6 @@ export function renderHome () {
     home.appendChild(createNameOfRandomCountry())
     home.appendChild(createHomeActions())
     home.appendChild(createBackButton())
-
 }
 
 
